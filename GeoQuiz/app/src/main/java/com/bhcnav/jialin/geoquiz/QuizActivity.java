@@ -1,6 +1,7 @@
 package com.bhcnav.jialin.geoquiz;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ public class QuizActivity extends AppCompatActivity {
     private Button mTrueButton;
     private Button mFalseButton;
     //private Button mNextButton;
+    private Button mCheatButton;
     private TextView mQuestionTextView;
     //private Button mPrevButton;
     private ImageButton NextButton;
@@ -36,6 +38,15 @@ public class QuizActivity extends AppCompatActivity {
     };
 
     private int mCurrentIndex = 0;
+    private boolean mIsCheater;     //save received-value from cheatActivity
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        if(data == null){
+            return;
+        }
+        mIsCheater = data.getBooleanExtra(CheatActivity.EXTRA_ANSWER_SHOWN, false);
+    }
 
     private void updateQuestion(){
         int question = mQuestionBank[mCurrentIndex].getQuestion();
@@ -47,10 +58,14 @@ public class QuizActivity extends AppCompatActivity {
 
         int messageResId = 0;
 
-        if(userPressedTrue == answerIsTrue){
-            messageResId = R.string.correct_toast;
+        if(mIsCheater){
+            messageResId = R.string.judgment_toast;
         }else{
-            messageResId = R.string.incorrect_toast;
+            if(userPressedTrue == answerIsTrue){
+                messageResId = R.string.correct_toast;
+            }else{
+                messageResId = R.string.incorrect_toast;
+            }
         }
 
         Toast.makeText(this, messageResId, Toast.LENGTH_SHORT)
@@ -125,10 +140,11 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
+                mIsCheater = false;
                 updateQuestion();
             }
         });
-
+/*
         PrevButton=(ImageButton)findViewById(R.id.prev_button);
         PrevButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -139,11 +155,24 @@ public class QuizActivity extends AppCompatActivity {
                 updateQuestion();
             }
         });
-
+*/
 
         if(savedInstanceState != null){
             mCurrentIndex = savedInstanceState.getInt(KEY_INDEX, 0);
         }
+
+        mCheatButton = (Button)findViewById(R.id.cheat_button);
+        mCheatButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                //Start CheatActivity
+                Intent i = new Intent(QuizActivity.this, CheatActivity.class);  //创建包含CheatActivity类的Intent实例
+                boolean answerIsTrue = mQuestionBank[mCurrentIndex].isTrueQuestion();
+                i.putExtra(CheatActivity.EXTRA_ANSWER_IS_TRUE, answerIsTrue);
+                //startActivity(i);                                               //传入startActivity方法
+                startActivityForResult(i, 0);                                   //return the cheat answer to parent activity
+            }
+        });
 
         updateQuestion();
     }
