@@ -2,10 +2,13 @@ package com.bhcnav.jialin.geoquiz;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 /**
  * Created by jialin on 16/4/22.
@@ -19,6 +22,7 @@ public class CheatActivity extends Activity {
     private boolean mAnswerIsTrue;
     private TextView mAnswerTextView;
     private Button mShowAnswer;
+    private TextView mShowApiLevel;
 
     private void setAnswerShownResult(boolean isAnswerShown){
         Intent data = new Intent();
@@ -51,6 +55,12 @@ public class CheatActivity extends Activity {
                 setAnswerShownResult(true);
             }
         });
+
+        int value = 0;
+        value = Build.VERSION.SDK_INT;
+        mShowApiLevel = (TextView)findViewById(R.id.showApiLevel);
+        mShowApiLevel.setText("Api Level "+value);
+        //mShowApiLevel.setText(value);
     }
 
 
