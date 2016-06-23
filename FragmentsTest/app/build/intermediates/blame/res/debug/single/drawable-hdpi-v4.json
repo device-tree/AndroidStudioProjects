@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/jialin/Downloads/FragmentsTest副本1/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_launcher.png",
+        "source": "/Users/jialin/Downloads/FragmentsTest副本1/app/src/main/res/drawable-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/jialin/AndroidStudioProjects/FragmentsTest/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_launcher.png",
+        "source": "/Users/jialin/AndroidStudioProjects/FragmentsTest/app/src/main/res/drawable-hdpi/ic_launcher.png"
+    }
+]

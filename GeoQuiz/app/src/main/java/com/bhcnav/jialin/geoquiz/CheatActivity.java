@@ -62,6 +62,4 @@ public class CheatActivity extends Activity {
         mShowApiLevel.setText("Api Level "+value);
         //mShowApiLevel.setText(value);
     }
-
-
 }
