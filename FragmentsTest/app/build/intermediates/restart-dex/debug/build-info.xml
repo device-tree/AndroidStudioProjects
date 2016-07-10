@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="x86"
-    api-level="18"
-    density="xhdpi"
+    abi="armeabi-v7a,armeabi"
+    api-level="19"
+    density="hdpi"
     format="7"
-    timestamp="224947807438106" >
+    timestamp="193627071928884"
+    token="4893255442489410962" >
 
     <task
         name="javac"
-        duration="104" />
+        duration="1287" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="17" />
+        duration="200" />
     <task
         name="verifier"
-        duration="2" />
+        duration="11" />
 
     <artifact
-        location="/Users/jialin/Downloads/FragmentsTest副本1/app/build/outputs/apk/app-debug.apk"
+        location="/Users/jialin/AndroidStudioProjects/FragmentsTest/app/build/outputs/apk/app-debug.apk"
         type="MAIN" />
 
-    <build timestamp="224947807438106" >
+    <build timestamp="193627071928884" >
         <artifact
-            location="/Users/jialin/Downloads/FragmentsTest副本1/app/build/outputs/apk/app-debug.apk"
+            location="/Users/jialin/AndroidStudioProjects/FragmentsTest/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
 

@@ -1,23 +1,11 @@
 [
     {
-        "merged": "/Users/jialin/Downloads/FragmentsTest副本1/app/build/intermediates/res/merged/debug/layout/activity_main.xml",
-        "source": "/Users/jialin/Downloads/FragmentsTest副本1/app/src/main/res/layout/activity_main.xml"
-    },
-    {
-        "merged": "/Users/jialin/Downloads/FragmentsTest副本1/app/build/intermediates/res/merged/debug/layout/fragment_two.xml",
-        "source": "/Users/jialin/Downloads/FragmentsTest副本1/app/src/main/res/layout/fragment_two.xml"
-    },
-    {
         "merged": "/Users/jialin/AndroidStudioProjects/FragmentsTest/app/build/intermediates/res/merged/debug/layout/fragment_one.xml",
         "source": "/Users/jialin/AndroidStudioProjects/FragmentsTest/app/src/main/res/layout/fragment_one.xml"
     },
     {
         "merged": "/Users/jialin/AndroidStudioProjects/FragmentsTest/app/build/intermediates/res/merged/debug/layout/activity_main.xml",
         "source": "/Users/jialin/AndroidStudioProjects/FragmentsTest/app/src/main/res/layout/activity_main.xml"
-    },
-    {
-        "merged": "/Users/jialin/Downloads/FragmentsTest副本1/app/build/intermediates/res/merged/debug/layout/fragment_one.xml",
-        "source": "/Users/jialin/Downloads/FragmentsTest副本1/app/src/main/res/layout/fragment_one.xml"
     },
     {
         "merged": "/Users/jialin/AndroidStudioProjects/FragmentsTest/app/build/intermediates/res/merged/debug/layout/fragment_two.xml",

@@ -1,2 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/Users/jialin/AndroidStudioProjects/FragmentsTest/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="a9e6e7ed973a5fc0c0229adbe4da57ea978ba3cb">
+        <dex dex="/Users/jialin/AndroidStudioProjects/FragmentsTest/app/build/intermediates/pre-dexed/debug/instant-run_f0c6e098a1a13ed2179d55166f2210722ce28bfe.jar" />
+    </item>
+    <item
+        jar="/Users/jialin/AndroidStudioProjects/FragmentsTest/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="b4660070916f155a7f9d30c9a8839b475a8847a5">
+        <dex dex="/Users/jialin/AndroidStudioProjects/FragmentsTest/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_f6f44b34dcd3373a53b75b7e52e53b66837f0bce.jar" />
+    </item>
+
+</items>
