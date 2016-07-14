@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
     abi="armeabi-v7a,armeabi"
-    api-level="19"
-    density="hdpi"
+    api-level="22"
+    density="xhdpi"
     format="7"
-    timestamp="194662138219183"
+    timestamp="36668086732033"
     token="0" >
 
     <task

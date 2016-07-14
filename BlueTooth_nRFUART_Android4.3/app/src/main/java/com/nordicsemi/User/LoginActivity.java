@@ -9,7 +9,7 @@ import android.R.string;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.widget.SimpleCursorAdapter.ViewBinder;
+//import android.support.v4.widget.SimpleCursorAdapter.ViewBinder;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,10 +28,10 @@ public class LoginActivity extends Activity {
 		secretforget.setOnClickListener(new TextViewClickListener());
 		
 		Button loginButton = (Button) this.findViewById(R.id.btn_login);
-		loginButton.setOnClickListener(new ButtonClickListener());//button±»µã»÷ºó¾Í»áµ÷ÓÃButtonClickListener()Õâ¸ö¶ÔÏó´¦Àíbtnµã»÷ÐÐÎª
+		loginButton.setOnClickListener(new ButtonClickListener());//buttonï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í»ï¿½ï¿½ï¿½ï¿½ButtonClickListener()ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½btnï¿½ï¿½ï¿½ï¿½ï¿½Îª
 		
 	}
-	//Íü¼ÇÃÜÂëµã»÷ÊÂ¼þ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½
 	private class TextViewClickListener implements View.OnClickListener{
 
 		@Override
@@ -40,22 +40,22 @@ public class LoginActivity extends Activity {
 		}
 	}
 	
-	//ÕâÀï²âÊÔ°´µÇÂ¼°´Å¥±£´æÊý¾Ýµ½ÊÖ»ú£¨ÎÄ¼þ·½Ê½±£´æ£©
-	//Ìá¹©Ò»¸öÄÚ²¿ÀàButtonClickListenerÀ´ÊµÏÖOnClickListenerÕâ¸ö½è¿Ú
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô°ï¿½ï¿½ï¿½Â¼ï¿½ï¿½Å¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½æ£©
+	//ï¿½á¹©Ò»ï¿½ï¿½ï¿½Ú²ï¿½ï¿½ï¿½ButtonClickListenerï¿½ï¿½Êµï¿½ï¿½OnClickListenerï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	private class ButtonClickListener implements View.OnClickListener{
-//	private final class ButtonClickListener implements View.OnClickListener{//Èç¹ûÄÚ²¿Àà²»ÐèÒª¼Ì³Ð£¬Òª¼Ófinal¹Ø¼ü×Ö
+//	private final class ButtonClickListener implements View.OnClickListener{//ï¿½ï¿½ï¿½ï¿½Ú²ï¿½ï¿½à²»ï¿½ï¿½Òªï¿½Ì³Ð£ï¿½Òªï¿½ï¿½finalï¿½Ø¼ï¿½ï¿½ï¿½
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
-			//µÃµ½Á½¸öÎÄ±¾ÊäÈë¿òµÄid
+			//ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½id
 			EditText accountEditText = (EditText) findViewById(R.id.account_editext);
 			EditText passwdeEditText = (EditText) findViewById(R.id.passwd_edit);
-			//µÃµ½Á½¸öÎÄ±¾ÊäÈë¿òµÄÄÚÈÝ
+			//ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			String accountString = accountEditText.getText().toString();
 			String passwdString = passwdeEditText.getText().toString();
 			
 			FileService service = new FileService(getApplicationContext());
-			//±»Å×³öµÄÀýÍâÔÚÕâÀïÊµÏÖ£¨try{}catch²¶»ñÀýÍâÒì³££©
+			//ï¿½ï¿½ï¿½×³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½Ö£ï¿½try{}catchï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ì³£ï¿½ï¿½
 			try {
 				service.save(accountString, passwdString);
 				Toast.makeText(getApplicationContext(), "saved succeed!!!!", 1).show();

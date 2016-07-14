@@ -43,7 +43,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-//¼àÌýÊÂ¼þRadioGroup.OnCheckedChangeListener
+
 public class BleActivity extends Activity implements RadioGroup.OnCheckedChangeListener {
 	
     private static final int REQUEST_SELECT_DEVICE = 1;
