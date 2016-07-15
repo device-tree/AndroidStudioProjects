@@ -5,15 +5,15 @@
         jar="/Users/jialin/AndroidStudioProjects/FragmentsTest/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         revision="23.0.2"
-        sha1="a9e6e7ed973a5fc0c0229adbe4da57ea978ba3cb">
-        <dex dex="/Users/jialin/AndroidStudioProjects/FragmentsTest/app/build/intermediates/pre-dexed/debug/instant-run_f0c6e098a1a13ed2179d55166f2210722ce28bfe.jar" />
+        sha1="43d8a86676a3bae2eb21c69206b6d9abfaea326a">
+        <dex dex="/Users/jialin/AndroidStudioProjects/FragmentsTest/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_f0c6e098a1a13ed2179d55166f2210722ce28bfe/classes.dex" />
     </item>
     <item
         jar="/Users/jialin/AndroidStudioProjects/FragmentsTest/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         revision="23.0.2"
-        sha1="b4660070916f155a7f9d30c9a8839b475a8847a5">
-        <dex dex="/Users/jialin/AndroidStudioProjects/FragmentsTest/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_f6f44b34dcd3373a53b75b7e52e53b66837f0bce.jar" />
+        sha1="f580c1d70b5801f50efaa40ed1d50df7cac6e7e1">
+        <dex dex="/Users/jialin/AndroidStudioProjects/FragmentsTest/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_f6f44b34dcd3373a53b75b7e52e53b66837f0bce/classes.dex" />
     </item>
 
 </items>
