@@ -132,12 +132,12 @@
         "source": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/src/main/res/drawable-hdpi/menu_bg.png"
     },
     {
-        "merged": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/tab_daohang_gre.png",
-        "source": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/src/main/res/drawable-hdpi/tab_daohang_gre.png"
-    },
-    {
         "merged": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/tab_settings_normal.png",
         "source": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/src/main/res/drawable-hdpi/tab_settings_normal.png"
+    },
+    {
+        "merged": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/tab_daohang_gre.png",
+        "source": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/src/main/res/drawable-hdpi/tab_daohang_gre.png"
     },
     {
         "merged": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/w02.jpg",

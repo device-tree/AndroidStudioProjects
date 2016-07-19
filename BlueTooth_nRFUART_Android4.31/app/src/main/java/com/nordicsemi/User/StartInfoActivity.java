@@ -16,13 +16,13 @@ public class StartInfoActivity extends Activity /*implements OnClickListener*/ {
 	private static final float FLING_MIN_DISTANCE = 0;
 	private static final float FLING_MIN_VELOCITY = 0;
 	private Button startbutton;
-	//Activity´´½¨Ê±±»µ÷ÓÃ
+	//Activityåˆ›å»ºæ—¶è¢«è°ƒç”¨
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.start_info_activity);
-		/*°´×¡CtrlºóÈç¹ûÖ±½Óµãstart_info_activity¾Í»á½øÈ¥start_infoµÄRÎÄ¼şÖĞ²é¿´id£¬°´CtrlÔÙ°ÑÊó±ê·ÅÔÚÉÏÃæ¶¨Ò»ÏÂ£¬µãµÚ¶ş¸ö¾Í¿ÉÒÔÌøµ½.xmlÎÄ¼şÁË*/
+		/*æŒ‰ä½Ctrlåå¦‚æœç›´æ¥ç‚¹start_info_activityå°±ä¼šè¿›å»start_infoçš„Ræ–‡ä»¶ä¸­æŸ¥çœ‹idï¼ŒæŒ‰Ctrlå†æŠŠé¼ æ ‡æ”¾åœ¨ä¸Šé¢å®šä¸€ä¸‹ï¼Œç‚¹ç¬¬äºŒä¸ªå°±å¯ä»¥è·³åˆ°.xmlæ–‡ä»¶äº†*/
 		
 		InitView();
 	
@@ -34,15 +34,15 @@ public class StartInfoActivity extends Activity /*implements OnClickListener*/ {
         {  
             Intent intent = new Intent(StartInfoActivity.this,StartLogoActivity.class);  
             startActivity(intent);  
-             Toast.makeText(this, "Ïò×óÊÖÊÆ", Toast.LENGTH_SHORT).show();   
+             Toast.makeText(this, "å‘å·¦æ‰‹åŠ¿", Toast.LENGTH_SHORT).show();   
   
         }  
         else if (e2.getX()-e1.getX() > FLING_MIN_DISTANCE && Math.abs(velocityX) >FLING_MIN_VELOCITY) {  
               
-            //ÇĞ»»Activity  
+            //åˆ‡æ¢Activity  
             Intent intent = new Intent(StartInfoActivity.this, HowHighActivity.class);  
             startActivity(intent);  
-            Toast.makeText(this, "ÏòÓÒÊÖÊÆ", Toast.LENGTH_SHORT).show();  
+            Toast.makeText(this, "å‘å³æ‰‹åŠ¿", Toast.LENGTH_SHORT).show();  
         }  
           
         return false;  
@@ -61,7 +61,7 @@ public class StartInfoActivity extends Activity /*implements OnClickListener*/ {
 				startActivity(new Intent(getApplicationContext(), HowHighActivity.class));
 			}
 		});
-		/*Ò»¸ö°´¼üµÄÇé¿öÊÇ£¬Ö±½Ó¼àÌıºó£¬°ÑÊó±ê·ÅÔÚsetOnClickListenerÉÏÃæ£¬ÏÔÊ¾»ÆÉ«µÄÌáÊ¾£¬È»ºóµãonClick£¬ÔÙÔÚonClickÖĞstartActivityÌø×ª¾Í¿ÉÒÔÁË*/
+		/*ä¸€ä¸ªæŒ‰é”®çš„æƒ…å†µæ˜¯ï¼Œç›´æ¥ç›‘å¬åï¼ŒæŠŠé¼ æ ‡æ”¾åœ¨setOnClickListenerä¸Šé¢ï¼Œæ˜¾ç¤ºé»„è‰²çš„æç¤ºï¼Œç„¶åç‚¹onClickï¼Œå†åœ¨onClickä¸­startActivityè·³è½¬å°±å¯ä»¥äº†*/
 		
 	}
 

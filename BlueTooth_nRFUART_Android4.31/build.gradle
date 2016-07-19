@@ -17,8 +17,3 @@ allprojects {
         jcenter()
     }
 }
-
-//设置编码
-tasks.withType(Compile) {
-    options.encoding = "GBK"
-}

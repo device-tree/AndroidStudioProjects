@@ -14,14 +14,14 @@ public class FileService {
 		this.context = context;
 	}
 
-/**	@´ÓAPPĞ´Êı¾İ³öÎÄ¼şÖĞ
+/**	@ä»APPå†™æ•°æ®å‡ºæ–‡ä»¶ä¸­
 	@param	accountString
 	@param	accountString
  	@throws Exception
 	**/
 	public void save(String accountString, String passwdString) throws Exception {
 		// TODO Auto-generated method stub
-		//ÕâÀï»á·¢ÉúÀıÍâ£¬È»ºóÓÃthrows ExceptionÅ×³öµ½Ç°ÃæµÄActivityÖĞÈ¥ÊµÏÖ
+		//è¿™é‡Œä¼šå‘ç”Ÿä¾‹å¤–ï¼Œç„¶åç”¨throws ExceptionæŠ›å‡ºåˆ°å‰é¢çš„Activityä¸­å»å®ç°
 		FileOutputStream outStreamaccount = context.openFileOutput("account.txt", context.MODE_PRIVATE); 
 		FileOutputStream outStreampasswd = context.openFileOutput("passwd.txt", context.MODE_PRIVATE);
 		outStreamaccount.write(accountString.getBytes());
@@ -30,9 +30,9 @@ public class FileService {
 		outStreampasswd.close();
 	}
 	
-/**	//´ÓÎÄ¼şÖĞ¶ÁÊı¾İ½øapp
- * @param filenameÎÄ¼şÃû
- * @return ÎÄ¼şÄÚÈİ
+/**	//ä»æ–‡ä»¶ä¸­è¯»æ•°æ®è¿›app
+ * @param filenameæ–‡ä»¶å
+ * @return æ–‡ä»¶å†…å®¹
  * @throws Exception
 **/	
 	public String read(String filename) throws Exception{
@@ -42,13 +42,13 @@ public class FileService {
 		
 		byte[] buffer = new byte[1024];
 		int len = 0;
-		while((len = inStream.read(buffer)) != -1){//Êı¾İ¶Á³öÀ´´æµ½Êı×ébufferÖĞ
-			outStream.write(buffer, 0, len);//ÔÙ½²Êı×ébufferÖĞµÄÊı¾İĞ´µ½ÄÚ´æ
-		}//Í¨¹ıÕâ¸öÑ­»·£¬°ÑÎÄ¼şÖĞµÄÊı¾İ¶Áµ½ÄÚ´æÖĞÈ¥
+		while((len = inStream.read(buffer)) != -1){//æ•°æ®è¯»å‡ºæ¥å­˜åˆ°æ•°ç»„bufferä¸­
+			outStream.write(buffer, 0, len);//å†è®²æ•°ç»„bufferä¸­çš„æ•°æ®å†™åˆ°å†…å­˜
+		}//é€šè¿‡è¿™ä¸ªå¾ªç¯ï¼ŒæŠŠæ–‡ä»¶ä¸­çš„æ•°æ®è¯»åˆ°å†…å­˜ä¸­å»
 		
-		//×îºó½«ÄÚ´æµÄÊı¾İ±£´æµ½Êı×édataÖĞ£¬ÕâÀïµÃµ½µÄÊı¾İÏàµ±ÓÚÇ°Ãæ±£´æÊ±getBytes()·½·¨µÃµ½µÄÊı¾İ
+		//æœ€åå°†å†…å­˜çš„æ•°æ®ä¿å­˜åˆ°æ•°ç»„dataä¸­ï¼Œè¿™é‡Œå¾—åˆ°çš„æ•°æ®ç›¸å½“äºå‰é¢ä¿å­˜æ—¶getBytes()æ–¹æ³•å¾—åˆ°çš„æ•°æ®
 		byte[] data = outStream.toByteArray();
-		return new String(data);//stringÊÇ×ª»»³ÉÏµÍ³Ä¬ÈÏ±àÂëµÄ×Ö·û´®
+		return new String(data);//stringæ˜¯è½¬æ¢æˆç³»ç»Ÿé»˜è®¤ç¼–ç çš„å­—ç¬¦ä¸²
 
 	} 
 	

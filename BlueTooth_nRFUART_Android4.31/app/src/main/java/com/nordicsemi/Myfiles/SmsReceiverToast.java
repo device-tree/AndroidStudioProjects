@@ -34,7 +34,7 @@ import android.widget.Toast;
 //            }     
 //            String smsBody = body.toString();     
 //            String smsNumber = number.toString();
-//            Toast.makeText(context, "ºÅÂë:"+smsNumber+"\nÄÚÈİ:"+smsBody, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(context, "å·ç :"+smsNumber+"\nå†…å®¹:"+smsBody, Toast.LENGTH_SHORT).show();
 //        }
 //    }
 // 
@@ -68,7 +68,7 @@ public class SmsReceiverToast extends BroadcastReceiver{
            
          String smsBody = body.toString();     
          String smsNumber = number.toString();
-         Toast.makeText(context, "ºÅÂë:"+smsNumber+"\nÄÚÈİ:"+smsBody, Toast.LENGTH_LONG).show();//toastÏÔÊ¾ĞÅÏ¢
+         Toast.makeText(context, "å·ç :"+smsNumber+"\nå†…å®¹:"+smsBody, Toast.LENGTH_LONG).show();//toastæ˜¾ç¤ºä¿¡æ¯
        }
        
     }
@@ -103,10 +103,10 @@ public class SmsReceiverToast extends BroadcastReceiver{
 	private void showDialog(Activity activity, String smsString) {
 		// TODO Auto-generated method stub
 		  new AlertDialog.Builder(activity)  
-		  .setTitle("²âÊÔAlertDialog.Builder") 
+		  .setTitle("æµ‹è¯•AlertDialog.Builder") 
 		  .setMessage(smsString) 
-		  .setPositiveButton("ÊÇ", null) 
-		  .setNegativeButton("·ñ", null) 
+		  .setPositiveButton("æ˜¯", null) 
+		  .setNegativeButton("å¦", null) 
 		  .show(); 
 	}
 

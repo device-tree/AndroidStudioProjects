@@ -25,7 +25,7 @@ public class ExitFromSettings extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Toast.makeText(getApplicationContext(), "��ʾ����������ⲿ�رմ��ڣ�", 
+				Toast.makeText(getApplicationContext(), "锟斤拷示锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷獠匡拷乇沾锟斤拷冢锟?", 
 						Toast.LENGTH_SHORT).show();	
 			}
 		});
@@ -42,7 +42,7 @@ public class ExitFromSettings extends Activity {
       }  
 	public void exitbutton0(View v) {  
     	this.finish();
-    	MainUserUI.instance.finish();//�ر�Main ���Activity
+    	MainUserUI.instance.finish();//锟截憋拷Main 锟斤拷锟紸ctivity
       }  
 	
 }

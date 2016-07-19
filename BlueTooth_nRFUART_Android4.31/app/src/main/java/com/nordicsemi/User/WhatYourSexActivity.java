@@ -1,7 +1,7 @@
 package com.nordicsemi.User;
 
 /*import android.R;*/
-/*¸Õ²Å³öÏÖRÎÄ¼şµÄÂ·¾¶²»¶ÔµÄÎÊÌâ£¬Òª°ÑËüĞŞ¸Ä³Éimport com.nordicsemi.nrfUARTv2.R;¼´RÎÄ¼şµÄÂ·¾¶ÒªºÍ¹¤³ÌÃûÍ³Ò»**/
+/*åˆšæ‰å‡ºç°Ræ–‡ä»¶çš„è·¯å¾„ä¸å¯¹çš„é—®é¢˜ï¼Œè¦æŠŠå®ƒä¿®æ”¹æˆimport com.nordicsemi.nrfUARTv2.R;å³Ræ–‡ä»¶çš„è·¯å¾„è¦å’Œå·¥ç¨‹åç»Ÿä¸€**/
 
 import com.nordicsemi.nrfUARTv2.R;
 import android.app.Activity;
@@ -43,7 +43,7 @@ public class WhatYourSexActivity extends Activity implements OnClickListener{
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
 				// TODO Auto-generated method stub
-				sexshow.setText("Å®");
+				sexshow.setText("å¥³");
 				v.setBackgroundResource(R.drawable.girl_logo);
 				boy_logo_image.setBackgroundResource(R.drawable.boy_logo_black);
 //				nextstepsex.setVisibility(View.VISIBLE);
@@ -55,12 +55,12 @@ public class WhatYourSexActivity extends Activity implements OnClickListener{
             @Override    
             public boolean onTouch(View v, MotionEvent event) {     
             	
-            		  sexshow.setText("ÄĞ");
+            		  sexshow.setText("ç”·");
 //                    if(event.getAction() == MotionEvent.ACTION_DOWN){     
-                            //¸ü¸ÄÎª°´ÏÂÊ±µÄ±³¾°Í¼Æ¬     
+                            //æ›´æ”¹ä¸ºæŒ‰ä¸‹æ—¶çš„èƒŒæ™¯å›¾ç‰‡     
                             v.setBackgroundResource(R.drawable.boy_logo);     
 //                    }else if(event.getAction() == MotionEvent.ACTION_UP){     
-//                            //¸ÄÎªÌ§ÆğÊ±µÄÍ¼Æ¬     
+//                            //æ”¹ä¸ºæŠ¬èµ·æ—¶çš„å›¾ç‰‡     
                             girl_logo_image.setBackgroundResource(R.drawable.girl_logo_black);     
 //                            nextstepsex.setVisibility(View.VISIBLE);
 //                    }     

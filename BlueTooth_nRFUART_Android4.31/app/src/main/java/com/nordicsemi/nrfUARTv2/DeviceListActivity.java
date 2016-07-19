@@ -206,7 +206,7 @@ public class DeviceListActivity extends Activity {
     @Override
     public void onStart() {
         super.onStart();
-       //ACTION_FOUND£ºÕÒµ½Éè±¸£¬Õâ¸öIntentÖÐ°üº¬Á½¸öextra fields£ºEXTRA_DEVICEºÍEXTRA_CLASS£¬·Ö±ð°üº¬BluetooDeviceºÍBluetoothClass¡£
+       //ACTION_FOUNDï¿½ï¿½ï¿½Òµï¿½ï¿½è±¸ï¿½ï¿½ï¿½ï¿½ï¿½Intentï¿½Ð°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½extra fieldsï¿½ï¿½EXTRA_DEVICEï¿½ï¿½EXTRA_CLASSï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½ï¿½BluetooDeviceï¿½ï¿½BluetoothClassï¿½ï¿½
         IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
         filter.addAction(BluetoothAdapter.ACTION_DISCOVERY_FINISHED);
         filter.addAction(BluetoothAdapter.ACTION_STATE_CHANGED);
@@ -240,7 +240,7 @@ public class DeviceListActivity extends Activity {
             result.putExtras(b);
             setResult(Activity.RESULT_OK, result);
             
-//    		Toast toast = Toast.makeText(getApplicationContext(), "ÒÑ¾­Á¬½ÓÉè±¸", Toast.LENGTH_SHORT);
+//    		Toast toast = Toast.makeText(getApplicationContext(), "ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½è±¸", Toast.LENGTH_SHORT);
 //    		toast.show();
             finish();
         }

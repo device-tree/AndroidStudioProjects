@@ -120,11 +120,11 @@
         "source": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/src/main/res/layout/whats2.xml"
     },
     {
-        "merged": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/res/merged/debug/layout/exit_dialog.xml",
-        "source": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/src/main/res/layout/exit_dialog.xml"
-    },
-    {
         "merged": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/res/merged/debug/layout/whats5.xml",
         "source": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/src/main/res/layout/whats5.xml"
+    },
+    {
+        "merged": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/res/merged/debug/layout/exit_dialog.xml",
+        "source": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/src/main/res/layout/exit_dialog.xml"
     }
 ]

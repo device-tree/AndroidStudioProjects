@@ -24,14 +24,14 @@ public class PhoneStatReceiver extends BroadcastReceiver {
         public void onReceive(Context context, Intent intent) {
         	
         	
-                //Èç¹ûÊÇ²¦´òµç»°£¨Èç¹ûÒª£©
+                //å¦‚æœæ˜¯æ‹¨æ‰“ç”µè¯ï¼ˆå¦‚æœè¦ï¼‰
                 if(intent.getAction().equals(Intent.ACTION_NEW_OUTGOING_CALL)){                        
                         incomingFlag = false;
                         String phoneNumber = intent.getStringExtra(Intent.EXTRA_PHONE_NUMBER);        
-                        Log.i(TAG, "call OUT:::::::::::::::::::::"+phoneNumber);//ÔÚlogcatÉÏÏÔÊ¾²¦ºÅ+ºÅÂë           
+                        Log.i(TAG, "call OUT:::::::::::::::::::::"+phoneNumber);//åœ¨logcatä¸Šæ˜¾ç¤ºæ‹¨å·+å·ç            
 						try {
 							txValue = phoneNumber.getBytes("UTF-8");
-//							mService.writeRXCharacteristic(txValue);//ÏÈÈ¡Ïû·¢Êı¾İµ½Âë±í£¬ÕâÀï»áÓĞÒì³££¬Òª²¶»ñÒì³£
+//							mService.writeRXCharacteristic(txValue);//å…ˆå–æ¶ˆå‘æ•°æ®åˆ°ç è¡¨ï¼Œè¿™é‡Œä¼šæœ‰å¼‚å¸¸ï¼Œè¦æ•è·å¼‚å¸¸
 						} catch (UnsupportedEncodingException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -39,16 +39,16 @@ public class PhoneStatReceiver extends BroadcastReceiver {
 						Log.i(TAG, "I had send phoneNumber to Mabiao!!!!!!!!!!!!!!!!!!!!!");
 						
                 }else{                        
-                        //Èç¹ûÊÇÀ´µç
+                        //å¦‚æœæ˜¯æ¥ç”µ
                         TelephonyManager tm = (TelephonyManager)context.getSystemService(Service.TELEPHONY_SERVICE);                        
                         switch (tm.getCallState()) {
                         case TelephonyManager.CALL_STATE_RINGING:
-                                incomingFlag = true;//±êÊ¶µ±Ç°ÊÇÀ´µç
+                                incomingFlag = true;//æ ‡è¯†å½“å‰æ˜¯æ¥ç”µ
                                 incoming_number = intent.getStringExtra("incoming_number");
-                                Log.i(TAG, "RINGING ::::::::::::::::::::::::"+ incoming_number);//ÔÚlogcatÉÏÏÔÊ¾À´µç+ºÅÂë    
+                                Log.i(TAG, "RINGING ::::::::::::::::::::::::"+ incoming_number);//åœ¨logcatä¸Šæ˜¾ç¤ºæ¥ç”µ+å·ç     
 							try {
 								txValue = incoming_number.getBytes("UTF-8");
-//								mService.writeRXCharacteristic(txValue);//ÏÈÈ¡Ïû·¢Êı¾İµ½Âë±í£¬ÕâÀï»áÓĞÒì³££¬Òª²¶»ñÒì³£
+//								mService.writeRXCharacteristic(txValue);//å…ˆå–æ¶ˆå‘æ•°æ®åˆ°ç è¡¨ï¼Œè¿™é‡Œä¼šæœ‰å¼‚å¸¸ï¼Œè¦æ•è·å¼‚å¸¸
 							} catch (UnsupportedEncodingException e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();

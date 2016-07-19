@@ -17,7 +17,7 @@ import android.widget.TextView;
 
 public class HowHighActivity extends Activity implements OnClickListener{
 	
-	/*ÕâÀï¶¨ÒåµÄ»ùÀàÒªÓëÆäÀàÐÍ¶ÔÓ¦£¬ÈçImageView£¬Button*/
+	/*ï¿½ï¿½ï¿½ï¶¨ï¿½ï¿½Ä»ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¶ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ImageViewï¿½ï¿½Button*/
 	private ImageView getback;
 	private Button nextstepheigh, heigh_up, heigh_down;
 	private TextView heightshow;
@@ -45,7 +45,7 @@ public class HowHighActivity extends Activity implements OnClickListener{
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				
-				heightshow.setText(Integer.valueOf(heightshow.getText().toString()) + 1 + "");//µã»÷+°´¼ü¼Ó1
+				heightshow.setText(Integer.valueOf(heightshow.getText().toString()) + 1 + "");//ï¿½ï¿½ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1
 //				nextstepheigh.setVisibility(View.VISIBLE);
 				
 			}
@@ -57,7 +57,7 @@ public class HowHighActivity extends Activity implements OnClickListener{
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				
-				heightshow.setText(Integer.valueOf(heightshow.getText().toString()) - 1 + "");//µã»÷-°´¼ü¼õ1
+				heightshow.setText(Integer.valueOf(heightshow.getText().toString()) - 1 + "");//ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1
 //				nextstepheigh.setVisibility(View.VISIBLE);
 				
 			}
@@ -71,9 +71,9 @@ public class HowHighActivity extends Activity implements OnClickListener{
 		switch (v.getId()) {
 		case R.id.get_back:
 			this.finish();
-			//ÕâÀïÊÇ°´¼üµÄ·µ»Ø²Ù×÷
-			//»òÕßÖ±½Ófinish();
-			//finish(this);ÕâÀï²»ÒªÐ´this£¬finishÀïÃæ²»ÄÜ·Å¶«Î÷£»
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½Ø²ï¿½ï¿½ï¿½
+			//ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½finish();
+			//finish(this);ï¿½ï¿½ï¿½ï²»ÒªÐ´thisï¿½ï¿½finishï¿½ï¿½ï¿½æ²»ï¿½Ü·Å¶ï¿½ï¿½ï¿½ï¿½ï¿½
 			break;
 		case R.id.next_step_heigh:
 			startActivity(new Intent(this, WhatYourSexActivity.class));

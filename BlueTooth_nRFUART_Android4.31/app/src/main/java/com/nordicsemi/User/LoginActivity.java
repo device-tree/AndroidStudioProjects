@@ -9,7 +9,6 @@ import android.R.string;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.widget.SimpleCursorAdapter.ViewBinder;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,10 +27,10 @@ public class LoginActivity extends Activity {
 		secretforget.setOnClickListener(new TextViewClickListener());
 		
 		Button loginButton = (Button) this.findViewById(R.id.btn_login);
-		loginButton.setOnClickListener(new ButtonClickListener());//button�������ͻ����ButtonClickListener()���������btn�����Ϊ
+		loginButton.setOnClickListener(new ButtonClickListener());//button茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆�禄茂驴陆茂驴陆茂驴陆茂驴陆ButtonClickListener()茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆btn茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆�陋
 		
 	}
-	//�����������¼�
+	//茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆�录茂驴陆
 	private class TextViewClickListener implements View.OnClickListener{
 
 		@Override
@@ -40,22 +39,22 @@ public class LoginActivity extends Activity {
 		}
 	}
 	
-	//������԰���¼��ť�������ݵ��ֻ����ļ���ʽ���棩
-	//�ṩһ���ڲ���ButtonClickListener��ʵ��OnClickListener������
+	//茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆�掳茂驴陆茂驴陆茂驴陆�录茂驴陆茂驴陆�楼茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆�碌茂驴陆茂驴陆�禄茂驴陆茂驴陆茂驴陆茂驴陆�录茂驴陆茂驴陆茂驴陆�陆茂驴陆茂驴陆茂驴陆忙拢漏
+	//茂驴陆谩鹿漏�禄茂驴陆茂驴陆茂驴陆�虏茂驴陆茂驴陆茂驴陆ButtonClickListener茂驴陆茂驴陆�碌茂驴陆茂驴陆OnClickListener茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆
 	private class ButtonClickListener implements View.OnClickListener{
-//	private final class ButtonClickListener implements View.OnClickListener{//����ڲ��಻��Ҫ�̳У�Ҫ��final�ؼ���
+//	private final class ButtonClickListener implements View.OnClickListener{//茂驴陆茂驴陆茂驴陆茂驴陆�虏茂驴陆茂驴陆�虏禄茂驴陆茂驴陆�陋茂驴陆�鲁�拢茂驴陆�陋茂驴陆茂驴陆final茂驴陆�录茂驴陆茂驴陆茂驴陆
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
-			//�õ������ı�������id
+			//茂驴陆�碌茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆�卤茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆id
 			EditText accountEditText = (EditText) findViewById(R.id.account_editext);
 			EditText passwdeEditText = (EditText) findViewById(R.id.passwd_edit);
-			//�õ������ı�����������
+			//茂驴陆�碌茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆�卤茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆
 			String accountString = accountEditText.getText().toString();
 			String passwdString = passwdeEditText.getText().toString();
 			
 			FileService service = new FileService(getApplicationContext());
-			//���׳�������������ʵ�֣�try{}catch���������쳣��
+			//茂驴陆茂驴陆茂驴陆�鲁茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆�碌茂驴陆�拢茂驴陆try{}catch茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆矛鲁拢茂驴陆茂驴陆
 			try {
 				service.save(accountString, passwdString);
 				Toast.makeText(getApplicationContext(), "saved succeed!!!!", 1).show();

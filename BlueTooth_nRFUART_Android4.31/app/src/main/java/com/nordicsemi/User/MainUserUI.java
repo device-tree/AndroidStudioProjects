@@ -5,7 +5,7 @@ import com.nordicsemi.nrfUARTv2.R;
 
 import java.util.ArrayList;
 
-/*ÍË³öÌáÊ¾£¬ÒªÔö¼ÓÁËÏÂÃæÈı¸ö°ü*/
+/*é€€å‡ºæç¤ºï¼Œè¦å¢åŠ äº†ä¸‹é¢ä¸‰ä¸ªåŒ…*/
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -29,11 +29,11 @@ public class MainUserUI extends Activity {
 	public static MainUserUI instance = null;
 	
 	private ViewPager mTabPager;	
-	private ImageView mTabImg;// ¶¯»­Í¼Æ¬
+	private ImageView mTabImg;// åŠ¨ç”»å›¾ç‰‡
 	private ImageView mTab1,mTab2,mTab3,mTab4, mTab5;
-	private int zero = 0;// ¶¯»­Í¼Æ¬Æ«ÒÆÁ¿
-	private int currIndex = 0;// µ±Ç°Ò³¿¨±àºÅ
-	private int one;//µ¥¸öË®Æ½¶¯»­Î»ÒÆ
+	private int zero = 0;// åŠ¨ç”»å›¾ç‰‡åç§»é‡
+	private int currIndex = 0;// å½“å‰é¡µå¡ç¼–å·
+	private int one;//å•ä¸ªæ°´å¹³åŠ¨ç”»ä½ç§»
 	private int two;
 	private int three;
 	private int four;
@@ -44,7 +44,7 @@ public class MainUserUI extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_weixin);
         
-         //Æô¶¯activityÊ±²»×Ô¶¯µ¯³öÈí¼üÅÌ
+         //å¯åŠ¨activityæ—¶ä¸è‡ªåŠ¨å¼¹å‡ºè½¯é”®ç›˜
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN); 
         instance = this;
         
@@ -60,7 +60,7 @@ public class MainUserUI extends Activity {
         mTabPager = (ViewPager)findViewById(R.id.tabpager);
         mTabPager.setOnPageChangeListener(new MyOnPageChangeListener());
         
-      //ÏÂÃæ²Ëµ¥À¸Î¢ĞÅĞ¡Í¼±ê
+      //ä¸‹é¢èœå•æ å¾®ä¿¡å°å›¾æ ‡
         mTab1 = (ImageView) findViewById(R.id.img_weixin);
         mTab2 = (ImageView) findViewById(R.id.img_address);
         mTab3 = (ImageView) findViewById(R.id.img_friends);
@@ -72,34 +72,34 @@ public class MainUserUI extends Activity {
         mTab3.setOnClickListener(new MyOnClickListener(2));
         mTab4.setOnClickListener(new MyOnClickListener(3));
         mTab5.setOnClickListener(new MyOnClickListener(4));
-        Display currDisplay = getWindowManager().getDefaultDisplay();//»ñÈ¡ÆÁÄ»µ±Ç°·Ö±æÂÊ
+        Display currDisplay = getWindowManager().getDefaultDisplay();//è·å–å±å¹•å½“å‰åˆ†è¾¨ç‡
         
         int displayWidth = currDisplay.getWidth();
         int displayHeight = currDisplay.getHeight();
-        one = displayWidth/4; //ÉèÖÃË®Æ½¶¯»­Æ½ÒÆ´óĞ¡
+        one = displayWidth/4; //è®¾ç½®æ°´å¹³åŠ¨ç”»å¹³ç§»å¤§å°
         two = one*2;
         three = one*3;
         four = one*4;
-        //Log.i("info", "»ñÈ¡µÄÆÁÄ»·Ö±æÂÊÎª" + one + two + three + "X" + displayHeight);
+        //Log.i("info", "è·å–çš„å±å¹•åˆ†è¾¨ç‡ä¸º" + one + two + three + "X" + displayHeight);
         
-        //InitImageView();//Ê¹ÓÃ¶¯»­
-      //½«Òª·ÖÒ³ÏÔÊ¾µÄView×°ÈëÊı×éÖĞ
+        //InitImageView();//ä½¿ç”¨åŠ¨ç”»
+      //å°†è¦åˆ†é¡µæ˜¾ç¤ºçš„Viewè£…å…¥æ•°ç»„ä¸­
         LayoutInflater mLi = LayoutInflater.from(this);
         View view1 = mLi.inflate(R.layout.main_mabiao, null);
         View view2 = mLi.inflate(R.layout.main_tab_address, null);
         View view3 = mLi.inflate(R.layout.main_tab_friends, null);
-        View view4 = mLi.inflate(R.layout.main_tab_map, null);//µ¼º½
+        View view4 = mLi.inflate(R.layout.main_tab_map, null);//å¯¼èˆª
         View view5 = mLi.inflate(R.layout.main_tab_wo, null);
         
-      //Ã¿¸öÒ³ÃæµÄviewÊı¾İ
+      //æ¯ä¸ªé¡µé¢çš„viewæ•°æ®
         final ArrayList<View> views = new ArrayList<View>();
         views.add(view1);
         views.add(view2);
         views.add(view3);
         views.add(view4);
-        views.add(view5);//µ¼º½
+        views.add(view5);//å¯¼èˆª
         
-      //Ìî³äViewPagerµÄÊı¾İÊÊÅäÆ÷
+      //å¡«å……ViewPagerçš„æ•°æ®é€‚é…å™¨
         PagerAdapter mPagerAdapter = new PagerAdapter() {
 			
 			@Override
@@ -133,7 +133,7 @@ public class MainUserUI extends Activity {
     }
     
     /**
-	 * Í·±êµã»÷¼àÌı
+	 * å¤´æ ‡ç‚¹å‡»ç›‘å¬
 	 */
 	public class MyOnClickListener implements View.OnClickListener {
 		private int index = 0;
@@ -147,7 +147,7 @@ public class MainUserUI extends Activity {
 		}
 	};
     
-	 /* Ò³¿¨ÇĞ»»¼àÌı(Ô­×÷Õß:D.Winter)
+	 /* é¡µå¡åˆ‡æ¢ç›‘å¬(åŸä½œè€…:D.Winter)
 	 */
 	public class MyOnPageChangeListener implements OnPageChangeListener {
 		@Override
@@ -246,7 +246,7 @@ public class MainUserUI extends Activity {
 				break;
 			}
 			currIndex = arg0;
-			animation.setFillAfter(true);// True:Í¼Æ¬Í£ÔÚ¶¯»­½áÊøÎ»ÖÃ
+			animation.setFillAfter(true);// True:å›¾ç‰‡åœåœ¨åŠ¨ç”»ç»“æŸä½ç½®
 			animation.setDuration(150);
 //			mTabImg.startAnimation(animation);
 		}
@@ -260,30 +260,30 @@ public class MainUserUI extends Activity {
 		}
 	}
 	
-	//ÉèÖÃ±êÌâÀ¸ÓÒ²à°´Å¥µÄ×÷ÓÃ
+	//è®¾ç½®æ ‡é¢˜æ å³ä¾§æŒ‰é’®çš„ä½œç”¨
 	public void btnmainright(View v) {  
-		/*ÕâÀïĞŞ¸ÄÁËActivityµÄ·½Ïò*/
+		/*è¿™é‡Œä¿®æ”¹äº†Activityçš„æ–¹å‘*/
 		/*Intent intent = new Intent (MainWeixin.this,MainTopRightDialog.class);*/	
 		Intent intent = new Intent (MainUserUI.this, BleActivity.class);	
 		startActivity(intent);
-		Toast toast = Toast.makeText(getApplicationContext(), "µã»÷°´Å¥²éÕÒÉè±¸Á¬½ÓÀ¶ÑÀ", Toast.LENGTH_LONG);
+		Toast toast = Toast.makeText(getApplicationContext(), "ç‚¹å‡»æŒ‰é’®æŸ¥æ‰¾è®¾å¤‡è¿æ¥è“ç‰™", Toast.LENGTH_LONG);
 		toast.show();
       }  	
       
-/*	public void startchat(View v) {      //Ğ¡ºÚ  ¶Ô»°½çÃæ
+/*	public void startchat(View v) {      //å°é»‘  å¯¹è¯ç•Œé¢
 		Intent intent = new Intent (MainWeixin.this,ChatActivity.class);			
 		startActivity(intent);	
-		//Toast.makeText(getApplicationContext(), "µÇÂ¼³É¹¦", Toast.LENGTH_LONG).show();
+		//Toast.makeText(getApplicationContext(), "ç™»å½•æˆåŠŸ", Toast.LENGTH_LONG).show();
       }
       */  
 	
-//	public void exit_settings(View v) {                           //ÍË³ö  Î±¡°¶Ô»°¿ò¡±£¬ÆäÊµÊÇÒ»¸öactivity
+//	public void exit_settings(View v) {                           //é€€å‡º  ä¼ªâ€œå¯¹è¯æ¡†â€ï¼Œå…¶å®æ˜¯ä¸€ä¸ªactivity
 //		Intent intent = new Intent (MainWeixin.this,ExitFromSettings.class);			
 //		startActivity(intent);	
 //	 }
 	 
 	 /*
-	public void btn_shake(View v) {                                   //ÊÖ»úÒ¡Ò»Ò¡
+	public void btn_shake(View v) {                                   //æ‰‹æœºæ‘‡ä¸€æ‘‡
 		Intent intent = new Intent (MainWeixin.this,ShakeActivity.class);			
 		startActivity(intent);	
 	}
@@ -293,8 +293,8 @@ public class MainUserUI extends Activity {
 	public void onBackPressed() {
 	        new AlertDialog.Builder(this)
 	        .setIcon(android.R.drawable.ic_dialog_alert)
-	        .setTitle(R.string.popup_title)		//ÌáÊ¾
-	        .setMessage(R.string.popup_message)		//È·¶¨ÒªÍË³öÂğ?
+	        .setTitle(R.string.popup_title)		//æç¤º
+	        .setMessage(R.string.popup_message)		//ç¡®å®šè¦é€€å‡ºå—?
 	        .setPositiveButton(R.string.popup_yes, new DialogInterface.OnClickListener()
 	            {
 	                @Override

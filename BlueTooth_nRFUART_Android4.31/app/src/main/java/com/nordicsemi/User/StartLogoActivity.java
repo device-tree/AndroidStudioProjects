@@ -21,36 +21,36 @@ import android.widget.Toast;
 
 public class StartLogoActivity extends Activity implements OnClickListener {
 	
-	/*¼àÌıÊ±¶¨Òå*/
+	/*ç›‘å¬æ—¶å®šä¹‰*/
 	private Button btnJoinSporta,btnLongin,blebtn;
 	private Handler handler;
 	
-	//Activity´´½¨Ê±±»µ÷ÓÃ£¬@Override±íÊ¾ÖØĞ´·½·¨£¨¹¦ÄÜ	£©
+	//Activityåˆ›å»ºæ—¶è¢«è°ƒç”¨ï¼Œ@Overrideè¡¨ç¤ºé‡å†™æ–¹æ³•ï¼ˆåŠŸèƒ½	ï¼‰
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		
 		setContentView(R.layout.start_logo_activity);
-		/*Ê¹ÓÃstart_logo_activity.xmlÎÄ¼ş¶¨ÒåµÄ½çÃæ²¼¾Ö*/
+		/*ä½¿ç”¨start_logo_activity.xmlæ–‡ä»¶å®šä¹‰çš„ç•Œé¢å¸ƒå±€*/
 		
-		/*·½·¨¶¨Òå£¬³õÊ¼»¯¿Ø¼ş£¬Ïàµ±ÓÚ·â×°Ò»¸ö³ÌĞò¿é*/
+		/*æ–¹æ³•å®šä¹‰ï¼Œåˆå§‹åŒ–æ§ä»¶ï¼Œç›¸å½“äºå°è£…ä¸€ä¸ªç¨‹åºå—*/
 		initview();
 		
-//		/*ÏÂÃæÓÃµ÷ÓÃ¶¨Ê±Æ÷*/
+//		/*ä¸‹é¢ç”¨è°ƒç”¨å®šæ—¶å™¨*/
 //		Timer time = new Timer();
-//		/*ĞÂµÄÈÎÎñ*/
+//		/*æ–°çš„ä»»åŠ¡*/
 //		TimerTask timerTask = new TimerTask() {
-//			/*Õâ¸öÈÎÎñ×öÊ²Ã´run£¬@Override¾ÍÊÇÖØĞ´·½·¨£¨¹¦ÄÜ	£©*/
+//			/*è¿™ä¸ªä»»åŠ¡åšä»€ä¹ˆrunï¼Œ@Overrideå°±æ˜¯é‡å†™æ–¹æ³•ï¼ˆåŠŸèƒ½	ï¼‰*/
 //			@Override
 //			public void run() {
 //				// TODO Auto-generated method stub
-//				Message message = Message.obtain(handler, 1);/*·¢ËÍ±êÊ¶·û*/
-//				handler.sendMessage(message);/*//´¦Àímessage
+//				Message message = Message.obtain(handler, 1);/*å‘é€æ ‡è¯†ç¬¦*/
+//				handler.sendMessage(message);/*//å¤„ç†message
 //*/			}
 //		};
-//		time.schedule(timerTask, 1);//1Ãë
-//		/*´¦ÀíµÄ·½·¨*/
+//		time.schedule(timerTask, 1);//1ç§’
+//		/*å¤„ç†çš„æ–¹æ³•*/
 //		handler = new Handler(){
 //			@Override
 //			public void handleMessage(Message msg) {
@@ -58,7 +58,7 @@ public class StartLogoActivity extends Activity implements OnClickListener {
 //				super.handleMessage(msg);
 //				switch (msg.what) {
 //				case 1:
-//					btnJoinSporta.setVisibility(View.VISIBLE);/*ÑÓÊ±ºó²ÅÏÔÊ¾Á½¸ö°´Å¥*/
+//					btnJoinSporta.setVisibility(View.VISIBLE);/*å»¶æ—¶åæ‰æ˜¾ç¤ºä¸¤ä¸ªæŒ‰é’®*/
 //					btnLongin.setVisibility(View.VISIBLE);
 //					break;
 //
@@ -70,7 +70,7 @@ public class StartLogoActivity extends Activity implements OnClickListener {
 		
 		try {
 			Thread.sleep(1000);
-			btnJoinSporta.setVisibility(View.VISIBLE);/*ÑÓÊ±ºó²ÅÏÔÊ¾Á½¸ö°´Å¥*/
+			btnJoinSporta.setVisibility(View.VISIBLE);/*å»¶æ—¶åæ‰æ˜¾ç¤ºä¸¤ä¸ªæŒ‰é’®*/
 			btnLongin.setVisibility(View.VISIBLE);	
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
@@ -83,22 +83,22 @@ public class StartLogoActivity extends Activity implements OnClickListener {
 	
 	private void initview() {
 		// TODO Auto-generated method stub
-		/*ÕÒµ½ID*/
+		/*æ‰¾åˆ°ID*/
 		btnJoinSporta = (Button) findViewById(R.id.start_btn_join_sporta);
 		btnLongin = (Button) findViewById(R.id.start_btn_login);
 		blebtn = (Button) findViewById(R.id.btn_to_ble);
-		/*ÉèÖÃ¼àÌıÆ÷£¨¾ßÓĞ¼àÌıÊôĞÔ£©*/
+		/*è®¾ç½®ç›‘å¬å™¨ï¼ˆå…·æœ‰ç›‘å¬å±æ€§ï¼‰*/
 		btnJoinSporta.setOnClickListener(this);
 		btnLongin.setOnClickListener(this);
 		blebtn.setOnClickListener(this);
 	}
 	
-	/*ÉÏÃæÒÑ¾­ÉèÖÃ¼àÌıÊôĞÔ£¬ÓĞµã»÷ÊÂ¼ş¾Í»áµ÷ÓÃÀïÃæµÄ´¦Àí·½·¨*/
+	/*ä¸Šé¢å·²ç»è®¾ç½®ç›‘å¬å±æ€§ï¼Œæœ‰ç‚¹å‡»äº‹ä»¶å°±ä¼šè°ƒç”¨é‡Œé¢çš„å¤„ç†æ–¹æ³•*/
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.start_btn_join_sporta:
-			startActivity(new Intent(this, StartInfoActivity.class));//µã»÷°´Å¥Ìøµ½ÁíÍâÒ»¸öActivity
+			startActivity(new Intent(this, StartInfoActivity.class));//ç‚¹å‡»æŒ‰é’®è·³åˆ°å¦å¤–ä¸€ä¸ªActivity
 			break;
 			
 		case R.id.start_btn_login:
@@ -107,14 +107,14 @@ public class StartLogoActivity extends Activity implements OnClickListener {
 			
 		case R.id.btn_to_ble:
 			startActivity(new Intent(this, BleActivity.class));
-//			Toast toast = Toast.makeText(this, "Ìøµ½Âë±íÖ÷Ò³Ãæ", Toast.LENGTH_SHORT);
+//			Toast toast = Toast.makeText(this, "è·³åˆ°ç è¡¨ä¸»é¡µé¢", Toast.LENGTH_SHORT);
 //			toast.show();
 			break;				
 
 		default:
 			break;
 		}
-	/*ÉÏÃæµÄstartActivity();Ò²¿ÉÒÔÏñÏÂÃæÒ»ÑùĞ´*/	
+	/*ä¸Šé¢çš„startActivity();ä¹Ÿå¯ä»¥åƒä¸‹é¢ä¸€æ ·å†™*/	
 //		Intent intent = new Intent(this, StartInfo.class);
 //		startActivity(intent);
 	}

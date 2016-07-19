@@ -7,11 +7,11 @@ import android.app.Activity;
 
 public class SysExit {
 	
-	//½¨Á¢Ò»¸öpublic staticµÄlistÓÃÀ´·Åactivity 
+	//å»ºç«‹ä¸€ä¸ªpublic staticçš„listç”¨æ¥æ”¾activity 
     public static List activityList = new ArrayList(); 
     
     
-      //finishËùÓĞlistÖĞµÄactivity£¬½áÊøÇ°ÃæËùÓĞµÄActivity
+      //finishæ‰€æœ‰listä¸­çš„activityï¼Œç»“æŸå‰é¢æ‰€æœ‰çš„Activity
     public static void exit(){    
     	
         int siz=activityList.size();     
@@ -22,7 +22,7 @@ public class SysExit {
             } 
     }
     
-    //×Ô¼º¶¨ÒåÒ»¸öÑÓÊ±³ÌĞò
+    //è‡ªå·±å®šä¹‰ä¸€ä¸ªå»¶æ—¶ç¨‹åº
     private void delay(int ms){
 		try {
             Thread.currentThread();

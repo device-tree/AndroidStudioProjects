@@ -24,7 +24,7 @@ public class MainTopRightDialog extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Toast.makeText(getApplicationContext(), "ÌáÊ¾£ºµã»÷´°¿ÚÍâ²¿¹Ø±Õ´°¿Ú£¡", 
+				Toast.makeText(getApplicationContext(), "ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â²¿ï¿½Ø±Õ´ï¿½ï¿½Ú£ï¿½", 
 						Toast.LENGTH_SHORT).show();	
 			}
 		});
@@ -41,7 +41,7 @@ public class MainTopRightDialog extends Activity {
       }  
 	public void exitbutton0(View v) {  
     	this.finish();
-    	MainWeixin.instance.finish();//¹Ø±ÕMain Õâ¸öActivity
+    	MainWeixin.instance.finish();//ï¿½Ø±ï¿½Main ï¿½ï¿½ï¿½Activity
       }  
 	*/
 }

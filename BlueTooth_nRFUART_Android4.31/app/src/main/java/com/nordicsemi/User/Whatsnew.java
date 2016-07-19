@@ -33,7 +33,7 @@ public class Whatsnew extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        /*²¼¾ÖÎÄ¼ş*/
+        /*å¸ƒå±€æ–‡ä»¶*/
         setContentView(R.layout.whatsnew_viewpager);
         
         mViewPager = (ViewPager)findViewById(R.id.whatsnew_viewpager);        
@@ -46,7 +46,7 @@ public class Whatsnew extends Activity {
         mPage4 = (ImageView)findViewById(R.id.page4);
         mPage5 = (ImageView)findViewById(R.id.page5);
         
-      //½«Òª·ÖÒ³ÏÔÊ¾µÄView×°ÈëÊı×éÖĞ
+      //å°†è¦åˆ†é¡µæ˜¾ç¤ºçš„Viewè£…å…¥æ•°ç»„ä¸­
         LayoutInflater mLi = LayoutInflater.from(this);
         View view1 = mLi.inflate(R.layout.whats1, null);
         View view2 = mLi.inflate(R.layout.whats2, null);
@@ -55,7 +55,7 @@ public class Whatsnew extends Activity {
         View view5 = mLi.inflate(R.layout.whats5, null);
         View view6 = mLi.inflate(R.layout.whats6, null);
         
-      //Ã¿¸öÒ³ÃæµÄviewÊı¾İ
+      //æ¯ä¸ªé¡µé¢çš„viewæ•°æ®
         final ArrayList<View> views = new ArrayList<View>();
         views.add(view1);
         views.add(view2);
@@ -64,7 +64,7 @@ public class Whatsnew extends Activity {
         views.add(view5);
         views.add(view6);
         
-        //Ìî³äViewPagerµÄÊı¾İÊÊÅäÆ÷
+        //å¡«å……ViewPagerçš„æ•°æ®é€‚é…å™¨
         PagerAdapter mPagerAdapter = new PagerAdapter() {
 			
 			@Override
@@ -126,7 +126,7 @@ public class Whatsnew extends Activity {
 				break;
 			}
 			currIndex = arg0;
-			//animation.setFillAfter(true);// True:Í¼Æ¬Í£ÔÚ¶¯»­½áÊøÎ»ÖÃ
+			//animation.setFillAfter(true);// True:å›¾ç‰‡åœåœ¨åŠ¨ç”»ç»“æŸä½ç½®
 			//animation.setDuration(300);
 			//mPageImg.startAnimation(animation);
 		}
@@ -139,13 +139,13 @@ public class Whatsnew extends Activity {
 		}
 	}
     
-    /*ÕâÀï°´startbuttonºó¾Í»áÌøÏòÁíÍâµÄActivity*/
+    /*è¿™é‡ŒæŒ‰startbuttonåå°±ä¼šè·³å‘å¦å¤–çš„Activity*/
     public void startbutton(View v) {  
     	SharedPreferences sharedPreferences = getSharedPreferences("is_first_login", Context.MODE_PRIVATE);
-        Editor editor = sharedPreferences.edit();//±à¼­
-        //±à¼­£¬ÏòSharedPreferences´æÈëÖ¸¶¨µÄkey¶ÔÓ¦µÄÊı¾İ£¬½«false·ÅÈëis_first£¬£¨ÉèÖÃfalse£©
+        Editor editor = sharedPreferences.edit();//ç¼–è¾‘
+        //ç¼–è¾‘ï¼Œå‘SharedPreferenceså­˜å…¥æŒ‡å®šçš„keyå¯¹åº”çš„æ•°æ®ï¼Œå°†falseæ”¾å…¥is_firstï¼Œï¼ˆè®¾ç½®falseï¼‰
 		editor.putString("is_first", "false");
-		editor.commit();//Ìá½»ĞŞ¸Ä
+		editor.commit();//æäº¤ä¿®æ”¹
 		
       	Intent intent = new Intent();
 		intent.setClass(Whatsnew.this, StartLogoActivity.class);

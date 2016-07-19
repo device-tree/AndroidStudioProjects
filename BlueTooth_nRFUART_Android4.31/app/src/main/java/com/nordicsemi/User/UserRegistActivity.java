@@ -40,7 +40,7 @@ public class UserRegistActivity extends Activity implements OnClickListener{
 			break;
 		case R.id.finish_btn:
 			startActivity(new Intent(this, MainUserUI.class));
-			Toast toast = Toast.makeText(this, "µÇÂ¼³É¹¦", Toast.LENGTH_LONG);
+			Toast toast = Toast.makeText(this, "ç™»å½•æˆåŠŸ", Toast.LENGTH_LONG);
 			toast.show();
 			break;
 		default:

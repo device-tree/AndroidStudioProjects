@@ -43,15 +43,15 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-//¼àÌıÊÂ¼şRadioGroup.OnCheckedChangeListener
+//ç›‘å¬äº‹ä»¶RadioGroup.OnCheckedChangeListener
 public class BleActivity extends Activity implements RadioGroup.OnCheckedChangeListener {
 	
     private static final int REQUEST_SELECT_DEVICE = 1;
     private static final int REQUEST_ENABLE_BT = 2;
     private static final int UART_PROFILE_READY = 10;
     public static final String TAG = "nRFUART";
-    private static final int UART_PROFILE_CONNECTED = 20;//ÍË³öÌáÊ¾
-    private int mState = UART_PROFILE_DISCONNECTED;////ÍË³öÌáÊ¾
+    private static final int UART_PROFILE_CONNECTED = 20;//é€€å‡ºæç¤º
+    private int mState = UART_PROFILE_DISCONNECTED;////é€€å‡ºæç¤º
     
     private static final int UART_PROFILE_DISCONNECTED = 21;
     private static final int STATE_OFF = 10;
@@ -87,17 +87,17 @@ public class BleActivity extends Activity implements RadioGroup.OnCheckedChangeL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_mabiao);
         
-        //Ê×ÏÈÎÒÃÇĞèÒª²éÕÒ±¾µØ»î¶¯µÄÀ¶ÑÀÊÊÅäÆ÷£¬»ñµÃÒ»¸öÏµÍ³Ä¬ÈÏ¿ÉÓÃµÄÀ¶ÑÀÉè±¸
+        //é¦–å…ˆæˆ‘ä»¬éœ€è¦æŸ¥æ‰¾æœ¬åœ°æ´»åŠ¨çš„è“ç‰™é€‚é…å™¨ï¼Œè·å¾—ä¸€ä¸ªç³»ç»Ÿé»˜è®¤å¯ç”¨çš„è“ç‰™è®¾å¤‡
         mBtAdapter = BluetoothAdapter.getDefaultAdapter();
-        // ÌáÊ¾ÕâÀï»á³öÏÖÃ»ÓĞÕÒµ½À¶ÑÀÓ²¼ş»òÇı¶¯´æÔÚµÄÎÊÌâ
-        /*Èç¹ûÃ»´ò¿ªÀ¶ÑÀ£¬»áÌáÊ¾À¶ÑÀ²»¿ÉÓÃ*/
+        // æç¤ºè¿™é‡Œä¼šå‡ºç°æ²¡æœ‰æ‰¾åˆ°è“ç‰™ç¡¬ä»¶æˆ–é©±åŠ¨å­˜åœ¨çš„é—®é¢˜
+        /*å¦‚æœæ²¡æ‰“å¼€è“ç‰™ï¼Œä¼šæç¤ºè“ç‰™ä¸å¯ç”¨*/
         if (mBtAdapter == null) {
             Toast.makeText(this, "Bluetooth is not available", Toast.LENGTH_SHORT).show();
             finish();
             return;
         }
         
-      //=====================================================================================UIµÄ³õÊ¼»¯£¨¿ªÊ¼£©
+      //=====================================================================================UIçš„åˆå§‹åŒ–ï¼ˆå¼€å§‹ï¼‰
         //messageListView = (ListView) findViewById(R.id.listMessage);
         //listAdapter = new ArrayAdapter<String>(this, R.layout.message_detail);
         //messageListView.setAdapter(listAdapter);
@@ -176,27 +176,27 @@ public class BleActivity extends Activity implements RadioGroup.OnCheckedChangeL
         relativeLayout_rise = (RelativeLayout) findViewById(R.id.relativeLayout7);
         relativeLayout_rise_total = (RelativeLayout) findViewById(R.id.relativeLayout4);
         
-//        edtMessage = (EditText) findViewById(R.id.sendText);//ÕâÀï×¢ÊÍÁË·¢ËÍÊäÈëÎÄ±¾¿ò    	
-        //=====================================================================================UIµÄ³õÊ¼»¯£¨½áÎ²£©
+//        edtMessage = (EditText) findViewById(R.id.sendText);//è¿™é‡Œæ³¨é‡Šäº†å‘é€è¾“å…¥æ–‡æœ¬æ¡†    	
+        //=====================================================================================UIçš„åˆå§‹åŒ–ï¼ˆç»“å°¾ï¼‰
         
-        service_init();//·şÎñ³õÊ¼»¯
+        service_init();//æœåŠ¡åˆå§‹åŒ–
         
         // Handler Disconnect & Connect button
         btnConnectDisconnect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mBtAdapter.isEnabled()) {//Èç¹ûÃ»ÓĞ¿ªÆô£¬ÎÒÃÇ¿ÉÒÔÍ¨¹ıÏÂÃæµÄ´úÂëÌáĞÑÓÃ»§ÆôÓÃ
+                if (!mBtAdapter.isEnabled()) {//å¦‚æœæ²¡æœ‰å¼€å¯ï¼Œæˆ‘ä»¬å¯ä»¥é€šè¿‡ä¸‹é¢çš„ä»£ç æé†’ç”¨æˆ·å¯ç”¨
                 	
                     Log.i(TAG, "onClick - BT not enabled yet");
-                    //´´½¨Ò»¸öIntent¶ÔÏó£¬ÓÃÓÚÆô¶¯Ò»¸öactivity£¬À´ÌáÊ¾ÓÃ»§¿ªÆôÀ¶ÑÀ  
+                    //åˆ›å»ºä¸€ä¸ªIntentå¯¹è±¡ï¼Œç”¨äºå¯åŠ¨ä¸€ä¸ªactivityï¼Œæ¥æç¤ºç”¨æˆ·å¼€å¯è“ç‰™  
                     Intent enableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-                    startActivityForResult(enableIntent, REQUEST_ENABLE_BT);//¿ªÆôÒ»¸öactivityÌáĞÑÓĞÓ¦ÓÃÒª¿ªÆôÀ¶ÑÀ£¬ÕâÀï»áÓĞ·µ»Ø
+                    startActivityForResult(enableIntent, REQUEST_ENABLE_BT);//å¼€å¯ä¸€ä¸ªactivityæé†’æœ‰åº”ç”¨è¦å¼€å¯è“ç‰™ï¼Œè¿™é‡Œä¼šæœ‰è¿”å›
                 }
                 else {
-                	if (btnConnectDisconnect.getText().equals("Connect")){//ÕâÀï°´ÏÂconnect°´Å¥
+                	if (btnConnectDisconnect.getText().equals("Connect")){//è¿™é‡ŒæŒ‰ä¸‹connectæŒ‰é’®
                 		
                 		//Connect button pressed, open DeviceListActivity class, with popup windows that scan for devices
-                		//µã»÷connect°´Å¥£¬µ¯³öDeviceListActivity£¬Ñ¡ÔñÀ¶ÑÀÁ¬½Óºó·µ»ØBleActivity
+                		//ç‚¹å‡»connectæŒ‰é’®ï¼Œå¼¹å‡ºDeviceListActivityï¼Œé€‰æ‹©è“ç‰™è¿æ¥åè¿”å›BleActivity
             			Intent newIntent = new Intent(BleActivity.this, DeviceListActivity.class);
             			startActivityForResult(newIntent, REQUEST_SELECT_DEVICE);
         			} else {
@@ -209,7 +209,7 @@ public class BleActivity extends Activity implements RadioGroup.OnCheckedChangeL
                 }
             }
         });
-        //°´ÏÂ¿ªÊ¼°´Å¥£¬·¢ËÍÊı¾İÇëÇóÖ¸Áî¸øÂë±í
+        //æŒ‰ä¸‹å¼€å§‹æŒ‰é’®ï¼Œå‘é€æ•°æ®è¯·æ±‚æŒ‡ä»¤ç»™ç è¡¨
         btnRequestStart.setOnClickListener
         (
         	new View.OnClickListener() 
@@ -217,16 +217,16 @@ public class BleActivity extends Activity implements RadioGroup.OnCheckedChangeL
 				public void onClick(View v) 
 				{
 					
-					btnRequestStart.setVisibility(View.GONE);//µã»÷×Ô¼ºÒş²Ø
-					btnRequestPause.setVisibility(View.VISIBLE);//ÏÔÊ¾
+					btnRequestStart.setVisibility(View.GONE);//ç‚¹å‡»è‡ªå·±éšè—
+					btnRequestPause.setVisibility(View.VISIBLE);//æ˜¾ç¤º
 					btnRequestStop.setVisibility(View.VISIBLE);			
 					
-					byte StartValue[] = new byte[]{0x7C, 0x33, 0x00 ,0x01, 0x01, 0x00, 0x02, 0x00, 0x00, 0x01, 0x00, 0x01};//¶ÁÈ¡Éè±¸Êı¾İÇëÇó ÃüÁî×Ö 02
+					byte StartValue[] = new byte[]{0x7C, 0x33, 0x00 ,0x01, 0x01, 0x00, 0x02, 0x00, 0x00, 0x01, 0x00, 0x01};//è¯»å–è®¾å¤‡æ•°æ®è¯·æ±‚ å‘½ä»¤å­— 02
 					mService.writeRXCharacteristic(StartValue);					
 				}
         	}
         );
-        //°´ÏÂÍ£Ö¹°´Å¥,·¢ËÍÒ»´ÎÊı¾İÇëÇóÖ¸Áî
+        //æŒ‰ä¸‹åœæ­¢æŒ‰é’®,å‘é€ä¸€æ¬¡æ•°æ®è¯·æ±‚æŒ‡ä»¤
         btnRequestStop.setOnClickListener
         (
     		new View.OnClickListener() 
@@ -238,12 +238,12 @@ public class BleActivity extends Activity implements RadioGroup.OnCheckedChangeL
 					btnRequestPause.setVisibility(View.GONE);
 					btnRequestStop.setVisibility(View.GONE);
 					
-					byte StopValue[] = new byte[]{0x7C, 0x33, 0x00 ,0x01, 0x01, 0x00, 0x02, 0x00, 0x00, 0x01, 0x00, 0x01};//¶ÁÈ¡Éè±¸Êı¾İÇëÇó
+					byte StopValue[] = new byte[]{0x7C, 0x33, 0x00 ,0x01, 0x01, 0x00, 0x02, 0x00, 0x00, 0x01, 0x00, 0x01};//è¯»å–è®¾å¤‡æ•°æ®è¯·æ±‚
 					mService.writeRXCharacteristic(StopValue);
 			    }
     		}
         );
-        //°´ÏÂÔİÍ£°´Å¥£¬·¢ËÍÒ»´ÎÊı¾İÇëÇóÖ¸Áî
+        //æŒ‰ä¸‹æš‚åœæŒ‰é’®ï¼Œå‘é€ä¸€æ¬¡æ•°æ®è¯·æ±‚æŒ‡ä»¤
         btnRequestPause.setOnClickListener
         (
         		new View.OnClickListener() 
@@ -260,7 +260,7 @@ public class BleActivity extends Activity implements RadioGroup.OnCheckedChangeL
 								btnRequestPause.setText("Pause");
 								flag = true;								
 							}				
-						byte PauseValue[] = new byte[]{0x7C, 0x33, 0x00 ,0x01, 0x01, 0x00, 0x02, 0x00, 0x00, 0x01, 0x00, 0x01};//¶ÁÈ¡Éè±¸Êı¾İÇëÇó
+						byte PauseValue[] = new byte[]{0x7C, 0x33, 0x00 ,0x01, 0x01, 0x00, 0x02, 0x00, 0x00, 0x01, 0x00, 0x01};//è¯»å–è®¾å¤‡æ•°æ®è¯·æ±‚
 						mService.writeRXCharacteristic(PauseValue);
 						Log.i(TAG, "Pause Button is clicked......clicked.........clicked..........clicked");		
 					}
@@ -268,7 +268,7 @@ public class BleActivity extends Activity implements RadioGroup.OnCheckedChangeL
         );
     }
     
-	//UART service connected/disconnected----------------´®¿Ú·şÎñÁ¬½ÓºÍ¶Ï¿ª
+	//UART service connected/disconnected----------------ä¸²å£æœåŠ¡è¿æ¥å’Œæ–­å¼€
     private ServiceConnection mServiceConnection = new ServiceConnection() {
     	
         public void onServiceConnected(ComponentName className, IBinder rawBinder) {
@@ -293,7 +293,7 @@ public class BleActivity extends Activity implements RadioGroup.OnCheckedChangeL
         }
     };
 
-    //×¢²áÒ»¸öBroadcastReceiver(¹ã²¥½ÓÊÕÆ÷)¶ÔÏóÀ´½ÓÊÕ²éÕÒµ½µÄÀ¶ÑÀÉè±¸ĞÅÏ¢
+    //æ³¨å†Œä¸€ä¸ªBroadcastReceiver(å¹¿æ’­æ¥æ”¶å™¨)å¯¹è±¡æ¥æ¥æ”¶æŸ¥æ‰¾åˆ°çš„è“ç‰™è®¾å¤‡ä¿¡æ¯
     private final BroadcastReceiver UARTStatusChangeReceiver = new BroadcastReceiver() {
 
         public void onReceive(Context context, Intent intent) {
@@ -301,39 +301,39 @@ public class BleActivity extends Activity implements RadioGroup.OnCheckedChangeL
 
             final Intent mIntent = intent;
            //*********************//
-            //UartService.ACTION_GATT_CONNECTED---------------ÏÔÊ¾Á¬½Ó³É¹¦
+            //UartService.ACTION_GATT_CONNECTED---------------æ˜¾ç¤ºè¿æ¥æˆåŠŸ
             if (action.equals(UartService.ACTION_GATT_CONNECTED)) {
             	 runOnUiThread(new Runnable() {
                      public void run() {
                          	String currentDateTimeString = DateFormat.getTimeInstance().format(new Date());
                              Log.d(TAG, "UART_CONNECT_MSG");
-                             btnConnectDisconnect.setText("Disconnect");//Á¬½ÓÉÏºó°´Å¥Connect±äÎªDisconnect
+                             btnConnectDisconnect.setText("Disconnect");//è¿æ¥ä¸ŠåæŒ‰é’®Connectå˜ä¸ºDisconnect
 //                             edtMessage.setEnabled(true);
 //                             btnSend.setEnabled(true);
                              
-                             //»ñÈ¡Ã¿¸öÉè±¸µÄÃû³ÆºÍMACµØÖ·Ìí¼Óµ½Êı×éÊÊÅäÆ÷myArrayAdapterÖĞ
-//                             ((TextView) findViewById(R.id.deviceName)).setText(mDevice.getName()+ " - ready");//ÒÑ¾­ÔÚxmlÖĞ×¢ÊÍdeviceName
+                             //è·å–æ¯ä¸ªè®¾å¤‡çš„åç§°å’ŒMACåœ°å€æ·»åŠ åˆ°æ•°ç»„é€‚é…å™¨myArrayAdapterä¸­
+//                             ((TextView) findViewById(R.id.deviceName)).setText(mDevice.getName()+ " - ready");//å·²ç»åœ¨xmlä¸­æ³¨é‡ŠdeviceName
                              showMessage(mDevice.getName()+ " - ready");
-                             //listAdapter.add("["+currentDateTimeString+"] Connected to: "+ mDevice.getName());//ÏÔÊ¾Á¬½Óµ½Ö¸¶¨Éè±¸
-                        	 //messageListView.smoothScrollToPosition(listAdapter.getCount() - 1);//ÁĞ±íÏûÏ¢»á»¬¶¯
+                             //listAdapter.add("["+currentDateTimeString+"] Connected to: "+ mDevice.getName());//æ˜¾ç¤ºè¿æ¥åˆ°æŒ‡å®šè®¾å¤‡
+                        	 //messageListView.smoothScrollToPosition(listAdapter.getCount() - 1);//åˆ—è¡¨æ¶ˆæ¯ä¼šæ»‘åŠ¨
                              mState = UART_PROFILE_CONNECTED;
                      }
             	 });
             }
            
-          //*********************//°´Disconnect¶Ï¿ªÁ¬½Ó
+          //*********************//æŒ‰Disconnectæ–­å¼€è¿æ¥
             if (action.equals(UartService.ACTION_GATT_DISCONNECTED)) {
             	 runOnUiThread(new Runnable() {
                      public void run() {
                     	 	 String currentDateTimeString = DateFormat.getTimeInstance().format(new Date());
                              Log.d(TAG, "UART_DISCONNECT_MSG");
                              btnConnectDisconnect.setText("Connect");
-//                             edtMessage.setEnabled(false);//ÕâÀïÒª×¢ÊÍ£¬Ã»ÓĞ×¢ÊÍ»áÍ£Ö¹ÔËĞĞ£¬ÒòÎªÇ°ÃæÒÑ¾­°ÑedtMessage×¢ÊÍÁË£¬ÕâÀï¾Í²»ÄÜ¶ÔedtMessage½øĞĞ²Ù×÷
-//                             btnSend.setEnabled(false);//ÀíÓÉÍ¬ÉÏ
-                             //ÔÚ×óÏÂ½ÇÏÔÊ¾Éè±¸Ã»Á¬½Ó
-//                             ((TextView) findViewById(R.id.deviceName)).setText("Not Connected");//ÒÑ×¢ÊÍdeviceName
-                             showMessage("Not Connected");//ÓÃtoastÀ´ÏÔÊ¾"Not Connected"
-                             //ÔÚÁĞ±íÖĞÏÔÊ¾³öÀ´
+//                             edtMessage.setEnabled(false);//è¿™é‡Œè¦æ³¨é‡Šï¼Œæ²¡æœ‰æ³¨é‡Šä¼šåœæ­¢è¿è¡Œï¼Œå› ä¸ºå‰é¢å·²ç»æŠŠedtMessageæ³¨é‡Šäº†ï¼Œè¿™é‡Œå°±ä¸èƒ½å¯¹edtMessageè¿›è¡Œæ“ä½œ
+//                             btnSend.setEnabled(false);//ç†ç”±åŒä¸Š
+                             //åœ¨å·¦ä¸‹è§’æ˜¾ç¤ºè®¾å¤‡æ²¡è¿æ¥
+//                             ((TextView) findViewById(R.id.deviceName)).setText("Not Connected");//å·²æ³¨é‡ŠdeviceName
+                             showMessage("Not Connected");//ç”¨toastæ¥æ˜¾ç¤º"Not Connected"
+                             //åœ¨åˆ—è¡¨ä¸­æ˜¾ç¤ºå‡ºæ¥
                              //listAdapter.add("["+currentDateTimeString+"] Disconnected to: "+ mDevice.getName());
                              
                              mState = UART_PROFILE_DISCONNECTED;
@@ -344,22 +344,22 @@ public class BleActivity extends Activity implements RadioGroup.OnCheckedChangeL
             }
             
           //*********************//
-          //UartService´®¿Ú·şÎñ
+          //UartServiceä¸²å£æœåŠ¡
             if (action.equals(UartService.ACTION_GATT_SERVICES_DISCOVERED)) {
              	 mService.enableTXNotification(); 
             }
             
-          //*********************//½ÓÊÕUartServiceÊı¾İÏÔÊ¾ÔÚlistViewÉÏ(ÕâÀïĞŞ¸Ä³ÉÏÔÊ¾ÔÚTextViewÉÏ)
+          //*********************//æ¥æ”¶UartServiceæ•°æ®æ˜¾ç¤ºåœ¨listViewä¸Š(è¿™é‡Œä¿®æ”¹æˆæ˜¾ç¤ºåœ¨TextViewä¸Š)
             if (action.equals(UartService.ACTION_DATA_AVAILABLE)) {
             	
-                final byte[] rxValue = intent.getByteArrayExtra(UartService.EXTRA_DATA);//½ÓÊÕµÄÊı¾İ£¨×Ö½ÚÀàĞÍ£©
-//                final int[] rxValue = intent.getIntArrayExtra(UartService.EXTRA_DATA);//½ÓÊÕµÄÊı¾İ£¨×Ö½ÚÀàĞÍ£©£¬Õâ¸ö²»ÎÈ¶¨
+                final byte[] rxValue = intent.getByteArrayExtra(UartService.EXTRA_DATA);//æ¥æ”¶çš„æ•°æ®ï¼ˆå­—èŠ‚ç±»å‹ï¼‰
+//                final int[] rxValue = intent.getIntArrayExtra(UartService.EXTRA_DATA);//æ¥æ”¶çš„æ•°æ®ï¼ˆå­—èŠ‚ç±»å‹ï¼‰ï¼Œè¿™ä¸ªä¸ç¨³å®š
                 
-                //ÓÃrunOnUiThread¸üĞÂÖ÷Ïß³Ì  
+                //ç”¨runOnUiThreadæ›´æ–°ä¸»çº¿ç¨‹  
 //                runOnUiThread(new Runnable() {//??????????????????????????????????????
 //                public void run() {/////////////////
 
-                	//Ê×ÏÈÕÒµ½Ö¡Í·ÏÂ±ê
+                	//é¦–å…ˆæ‰¾åˆ°å¸§å¤´ä¸‹æ ‡
                 	int headnum = 0, i = 0;
                 	
                 	for(i = 0; i < rxValue.length; i++)
@@ -368,65 +368,65 @@ public class BleActivity extends Activity implements RadioGroup.OnCheckedChangeL
                 			headnum = i;
                 	}
                 	
-//            		ÆæĞ£Ñé,ÕâÀïÊÇĞ£ÑéÊı¾İ
-            		boolean parity = false;  //³õÊ¼ÅĞ¶Ï±ê¼Ç
+//            		å¥‡æ ¡éªŒ,è¿™é‡Œæ˜¯æ ¡éªŒæ•°æ®
+            		boolean parity = false;  //åˆå§‹åˆ¤æ–­æ ‡è®°
                 	int sum = 0;
                 	
             		int datalen = rxValue[headnum + 8];//get effect data length
-            		for (i = headnum; i < headnum + datalen + 12; i++) {//½ÓÊÕÊı¾İÖ¡µÄÊ±ºò£¬È«²¿£¨°üÀ¨Ğ£ÑéÎ»£©¶¼ÒªÏà¼ÓºÍ
+            		for (i = headnum; i < headnum + datalen + 12; i++) {//æ¥æ”¶æ•°æ®å¸§çš„æ—¶å€™ï¼Œå…¨éƒ¨ï¼ˆåŒ…æ‹¬æ ¡éªŒä½ï¼‰éƒ½è¦ç›¸åŠ å’Œ
             			sum += rxValue[i];
             		}
             		
-            		//ÆæÅ¼Ğ£Ñé
+            		//å¥‡å¶æ ¡éªŒ
             		if (sum % 2 == 0){
-            			parity = false; //Å¼Êı
+            			parity = false; //å¶æ•°
             		} else {
-            			parity = true;	//ÆæÊı
+            			parity = true;	//å¥‡æ•°
             		}
             		
-					//ÒÑ¾­ÊÇÆæÊı£¬Èç¹ûvaluesumÖĞ1µÄÊıÄ¿ÎªÆæÊı£¬Ôòparity=true£¬·ñÔòparity=false£¬±íÊ¾£¨Å¼Êı£©³ö´í
+					//å·²ç»æ˜¯å¥‡æ•°ï¼Œå¦‚æœvaluesumä¸­1çš„æ•°ç›®ä¸ºå¥‡æ•°ï¼Œåˆ™parity=trueï¼Œå¦åˆ™parity=falseï¼Œè¡¨ç¤ºï¼ˆå¶æ•°ï¼‰å‡ºé”™
 	    				if (parity == false) { 
-	//    					Toast.makeText(getApplicationContext(), "Êı¾İ·¢ËÍ³ö´í£¬parity == false", Toast.LENGTH_SHORT).show();
-	    					Log.w(TAG, "--------------Êı¾İĞ£Ñé²»ÊÇÆæÊı£¬parity == false----------------");
+	//    					Toast.makeText(getApplicationContext(), "æ•°æ®å‘é€å‡ºé”™ï¼Œparity == false", Toast.LENGTH_SHORT).show();
+	    					Log.w(TAG, "--------------æ•°æ®æ ¡éªŒä¸æ˜¯å¥‡æ•°ï¼Œparity == false----------------");
 	    					}
 	    				else {
 	    						
 	    					switch (rxValue[headnum + 6]) {	
 	    						case 0x0A:
-	    							Log.i(TAG, "Mabiao sending acknowledgement!!!!!!!!!!!!!!!!!!0x0A");//·¢ËÍÓ¦´ğ
+	    							Log.i(TAG, "Mabiao sending acknowledgement!!!!!!!!!!!!!!!!!!0x0A");//å‘é€åº”ç­”
 	    							break;
 	    						case 0x0B:
-	    							//Õâ¸öÓÃget¡£¡£¡£¡£¡£µÄµ½ÊäÈëµÄĞÅÏ¢
-	    							Log.i(TAG, "Mabiao request to send device parameter!!!!!!!!!!!!!!!!!0x0B");//·¢ËÍÉè±¸²ÎÊı
+	    							//è¿™ä¸ªç”¨getã€‚ã€‚ã€‚ã€‚ã€‚çš„åˆ°è¾“å…¥çš„ä¿¡æ¯
+	    							Log.i(TAG, "Mabiao request to send device parameter!!!!!!!!!!!!!!!!!0x0B");//å‘é€è®¾å¤‡å‚æ•°
 	    							break;
 	    						case 0x0C:
-	    							Log.i(TAG, "Mabiao request to send device status!!!!!!!!!!!!!!!!!!!0x0C");//·¢ËÍÉè±¸×´Ì¬
+	    							Log.i(TAG, "Mabiao request to send device status!!!!!!!!!!!!!!!!!!!0x0C");//å‘é€è®¾å¤‡çŠ¶æ€
 	    							break;
 								case 0x0D:
-									Log.i(TAG, "Mabiao request to send device location information!!!!!!!!!0x0D");//·¢ËÍÎ»ÖÃĞÅÏ¢
+									Log.i(TAG, "Mabiao request to send device location information!!!!!!!!!0x0D");//å‘é€ä½ç½®ä¿¡æ¯
 									break;
 								case 0x0E:
-									Log.i(TAG, "Mabiao request to send Track statistics!!!!!!!!!!!!!0x0E");//·¢ËÍ¹ì¼£Í³¼Æ
+									Log.i(TAG, "Mabiao request to send Track statistics!!!!!!!!!!!!!0x0E");//å‘é€è½¨è¿¹ç»Ÿè®¡
 									break;
 								case 0x0F:
-									Log.i(TAG, "Mabiao request Storage path to upload!!!!!!!!!!!!!!!0x0F");//´æ´¢¹ì¼£ÉÏ´«
+									Log.i(TAG, "Mabiao request Storage path to upload!!!!!!!!!!!!!!!0x0F");//å­˜å‚¨è½¨è¿¹ä¸Šä¼ 
 									break;
 								case 0x10:
-									Log.i(TAG, "Mabiao Data reception is completed!!!!!!!!!!!!!!!!!!0x10");//Êı¾İ½ÓÊÕÍê³É×´Ì¬
+									Log.i(TAG, "Mabiao Data reception is completed!!!!!!!!!!!!!!!!!!0x10");//æ•°æ®æ¥æ”¶å®ŒæˆçŠ¶æ€
 									break;
 								case 0x11:
-									Log.i(TAG, "Mabiao request Start timming!!!!!!!!!!!!!!!!!!0x11");//¿ªÊ¼¼ÆÊ±
+									Log.i(TAG, "Mabiao request Start timming!!!!!!!!!!!!!!!!!!0x11");//å¼€å§‹è®¡æ—¶
 									break;
 								case 0x12:
-									Log.i(TAG, "Mabiao request Pause timming!!!!!!!!!!!!!!!!!!0x12");//ÔİÍ£¼ÆÊ±
+									Log.i(TAG, "Mabiao request Pause timming!!!!!!!!!!!!!!!!!!0x12");//æš‚åœè®¡æ—¶
 									break;
 								case 0x13:
-									Log.i(TAG, "Mabiao request Stop timming!!!!!!!!!!!!!!!!!!0x13");//Í£Ö¹¼ÆÊ±
+									Log.i(TAG, "Mabiao request Stop timming!!!!!!!!!!!!!!!!!!0x13");//åœæ­¢è®¡æ—¶
 									break;
 								case 0x14:
-									Log.i(TAG, "show current_speed!!!!!!!!!!!!!!!!!!20");//µ±Ç°ËÙ¶È
+									Log.i(TAG, "show current_speed!!!!!!!!!!!!!!!!!!20");//å½“å‰é€Ÿåº¦
 									try {
-	//									String text = new String(temp, "UTF-8");//½«×Ö½ÚĞÍÊı¾İ×ª³É×Ö·û´®ÀàĞÍ
+	//									String text = new String(temp, "UTF-8");//å°†å­—èŠ‚å‹æ•°æ®è½¬æˆå­—ç¬¦ä¸²ç±»å‹
 	//									for (int i = 9 + headnum, j = 0; i < rxValue[8] + headnum + 9; j++, i++) {
 	//										byte[] temp = null;
 	//										temp[j] = rxValue[i];
@@ -435,7 +435,7 @@ public class BleActivity extends Activity implements RadioGroup.OnCheckedChangeL
 										current_speed_textview2.setText(""+(rxValue[headnum + 9 + 1]-0x30));
 										current_speed_textview3.setText(""+(rxValue[headnum + 9 + 2]-0x30));
 										current_speed_textview4.setText(""+(rxValue[headnum + 9 + 3]-0x30));
-	//									current_speed_textview5.setText(""+(rxValue[headnum + 9 + 4]-0x30));//¼Ó¶àÁË-0x30£¬ÕâÀïÊÇĞ¡Êıµã
+	//									current_speed_textview5.setText(""+(rxValue[headnum + 9 + 4]-0x30));//åŠ å¤šäº†-0x30ï¼Œè¿™é‡Œæ˜¯å°æ•°ç‚¹
 										current_speed_textview6.setText(""+(rxValue[headnum + 9 + 5]-0x30));
 										Log.i(TAG, "I have received  current_speed!!!!!!!!!!!!!!!!!!!!!!!20");
 									} catch (Exception e) {
@@ -444,7 +444,7 @@ public class BleActivity extends Activity implements RadioGroup.OnCheckedChangeL
 									}
 									break;
 								case 0x15:
-									Log.i(TAG, "show average_speed!!!!!!!!!!!!!!!!!!21");//Æ½¾ùËÙ¶È
+									Log.i(TAG, "show average_speed!!!!!!!!!!!!!!!!!!21");//å¹³å‡é€Ÿåº¦
 									try {
 										average_speed1.setText(""+(rxValue[headnum + 9]-0x30));
 										average_speed2.setText(""+(rxValue[headnum + 9 + 1]-0x30));
@@ -458,7 +458,7 @@ public class BleActivity extends Activity implements RadioGroup.OnCheckedChangeL
 									}
 									break;
 								case 0x16:
-									Log.i(TAG, "show elevation!!!!!!!!!!!!!!!!!!22");//º£°Î
+									Log.i(TAG, "show elevation!!!!!!!!!!!!!!!!!!22");//æµ·æ‹”
 									try {
 										elevation1.setText(""+(rxValue[headnum + 9]-0x30));
 										elevation2.setText(""+(rxValue[headnum + 9 + 1]-0x30));
@@ -473,7 +473,7 @@ public class BleActivity extends Activity implements RadioGroup.OnCheckedChangeL
 									}
 									break;
 								case 0x17:
-									Log.i(TAG, "show max_speed!!!!!!!!!!!!!!!!!!23");//×î´óËÙ¶È
+									Log.i(TAG, "show max_speed!!!!!!!!!!!!!!!!!!23");//æœ€å¤§é€Ÿåº¦
 									try {
 										max_speed1.setText(""+(rxValue[headnum + 9]-0x30));
 										max_speed2.setText(""+(rxValue[headnum + 9 + 1]-0x30));
@@ -508,7 +508,7 @@ public class BleActivity extends Activity implements RadioGroup.OnCheckedChangeL
 									Log.i(TAG, " !!!!!!!!!!!!!!!!!!30");//
 									break;
 								case 0x1F:
-									Log.i(TAG, "show grade!!!!!!!!!!!!!!!!!!31");//ÆÂ¶È
+									Log.i(TAG, "show grade!!!!!!!!!!!!!!!!!!31");//å¡åº¦
 									try {
 										grade1.setText(""+(rxValue[headnum + 9]-0x30));
 										grade2.setText(""+(rxValue[headnum + 9 + 1]-0x30));
@@ -521,7 +521,7 @@ public class BleActivity extends Activity implements RadioGroup.OnCheckedChangeL
 									
 									break;
 								case 0x20:
-									Log.i(TAG, "show average_peispeed!!!!!!!!!!!!!!!!!!32");//Æ½¾ùÅäËÙ
+									Log.i(TAG, "show average_peispeed!!!!!!!!!!!!!!!!!!32");//å¹³å‡é…é€Ÿ
 									try {
 										average_peispeed1.setText(""+(rxValue[headnum + 9]-0x30));
 										average_peispeed2.setText(""+(rxValue[headnum + 9 + 1]-0x30));
@@ -541,7 +541,7 @@ public class BleActivity extends Activity implements RadioGroup.OnCheckedChangeL
 									Log.i(TAG, " !!!!!!!!!!!!!!!!!!34");//
 									break;
 								case 0x23:
-									Log.i(TAG, "show mileage!!!!!!!!!!!!!!!!!!35");//Àï³Ì
+									Log.i(TAG, "show mileage!!!!!!!!!!!!!!!!!!35");//é‡Œç¨‹
 									try {
 										mileage1.setText(""+(rxValue[headnum + 9]-0x30));
 										mileage2.setText(""+(rxValue[headnum + 9 + 1]-0x30));
@@ -555,7 +555,7 @@ public class BleActivity extends Activity implements RadioGroup.OnCheckedChangeL
 									}
 									break;
 								case 0x24:
-									Log.i(TAG, "show use_time!!!!!!!!!!!!!!!!!!36");//ÓÃÊ±
+									Log.i(TAG, "show use_time!!!!!!!!!!!!!!!!!!36");//ç”¨æ—¶
 									try {
 										use_time1.setText(""+(rxValue[headnum + 9]-0x30));
 										use_time2.setText(""+(rxValue[headnum + 9 + 1]-0x30));
@@ -569,7 +569,7 @@ public class BleActivity extends Activity implements RadioGroup.OnCheckedChangeL
 									
 									break;
 								case 0x25:
-									Log.i(TAG, "show rise!!!!!!!!!!!!!!!!!!37");//ÉÏÉı
+									Log.i(TAG, "show rise!!!!!!!!!!!!!!!!!!37");//ä¸Šå‡
 									try {
 										rise1.setText(""+(rxValue[headnum + 9]-0x30));
 										rise2.setText(""+(rxValue[headnum + 9 + 1]-0x30));
@@ -584,7 +584,7 @@ public class BleActivity extends Activity implements RadioGroup.OnCheckedChangeL
 									}
 									break;
 								case 0x26:
-									Log.i(TAG, "show fall!!!!!!!!!!!!!!!!!!38");//ÏÂ½µ
+									Log.i(TAG, "show fall!!!!!!!!!!!!!!!!!!38");//ä¸‹é™
 									try {
 										fall1.setText(""+(rxValue[headnum + 9]-0x30));
 										fall2.setText(""+(rxValue[headnum + 9 + 1]-0x30));
@@ -607,7 +607,7 @@ public class BleActivity extends Activity implements RadioGroup.OnCheckedChangeL
 	    					}//if~else
                 	
 					
-//	        				ÕâÀïÓÃÀ´²âÊÔ»Ø´«³¬¹ı20¸ö×Ö½ÚµÄÊ±ºòÓÃµÄ´úÂë£¨Ö®Ç°ÊÇÊ²Ã´Êı¾İ¾Í»Ø´«Ê²Ã´Êı¾İ£¬ÏÖÔÚĞ£Ñé³É¹¦µÄÊı¾İ²Å»Ø´«£©				
+//	        				è¿™é‡Œç”¨æ¥æµ‹è¯•å›ä¼ è¶…è¿‡20ä¸ªå­—èŠ‚çš„æ—¶å€™ç”¨çš„ä»£ç ï¼ˆä¹‹å‰æ˜¯ä»€ä¹ˆæ•°æ®å°±å›ä¼ ä»€ä¹ˆæ•°æ®ï¼Œç°åœ¨æ ¡éªŒæˆåŠŸçš„æ•°æ®æ‰å›ä¼ ï¼‰				
         				callback_send_message(rxValue);	   
 
 //                }//run()
@@ -621,7 +621,7 @@ public class BleActivity extends Activity implements RadioGroup.OnCheckedChangeL
             	mService.disconnect();
             }
         }//onReceive()
-    };//new BroadcastReceiver()¶ÔÏóÀ´½ÓÊÕ²éÕÒµ½µÄÀ¶ÑÀÉè±¸ĞÅÏ¢Ààµ½´ËÍê³É
+    };//new BroadcastReceiver()å¯¹è±¡æ¥æ¥æ”¶æŸ¥æ‰¾åˆ°çš„è“ç‰™è®¾å¤‡ä¿¡æ¯ç±»åˆ°æ­¤å®Œæˆ
     
 
     private void service_init() {
@@ -633,10 +633,10 @@ public class BleActivity extends Activity implements RadioGroup.OnCheckedChangeL
     
 
 
-	//´´½¨intentfilter¼°¹ã²¥½ÓÊÕº¯Êı
+	//åˆ›å»ºintentfilteråŠå¹¿æ’­æ¥æ”¶å‡½æ•°
     private static IntentFilter makeGattUpdateIntentFilter() {
     	
-        final IntentFilter intentFilter = new IntentFilter();// ×¢²áÕâ¸ö BroadcastReceiver 
+        final IntentFilter intentFilter = new IntentFilter();// æ³¨å†Œè¿™ä¸ª BroadcastReceiver 
         
         intentFilter.addAction(UartService.ACTION_GATT_CONNECTED);
         intentFilter.addAction(UartService.ACTION_GATT_DISCONNECTED);
@@ -656,7 +656,7 @@ public class BleActivity extends Activity implements RadioGroup.OnCheckedChangeL
         Log.d(TAG, "onDestroy()");
         
         try {
-        	//Ê¹ÓÃunregisterReceiver·½·¨·´×¢²áÕâ¸öBroadcastReceiver¶ÔÏó±£Ö¤×ÊÔ´±»ÕıÈ·»ØÊÕ¡£
+        	//ä½¿ç”¨unregisterReceiveræ–¹æ³•åæ³¨å†Œè¿™ä¸ªBroadcastReceiverå¯¹è±¡ä¿è¯èµ„æºè¢«æ­£ç¡®å›æ”¶ã€‚
         	LocalBroadcastManager.getInstance(this).unregisterReceiver(UARTStatusChangeReceiver);
         } catch (Exception ignore) {
             Log.e(TAG, ignore.toString());
@@ -712,9 +712,9 @@ public class BleActivity extends Activity implements RadioGroup.OnCheckedChangeL
                 mDevice = BluetoothAdapter.getDefaultAdapter().getRemoteDevice(deviceAddress);
                
                 Log.d(TAG, "... onActivityResultdevice.address==" + mDevice + "mserviceValue" + mService);
-//                ((TextView) findViewById(R.id.deviceName)).setText(mDevice.getName()+ " - connecting");//Õâ¸öÊÇÏÔÊ¾ÔÚtextviewÖĞµÄÎÄ×Ö
+//                ((TextView) findViewById(R.id.deviceName)).setText(mDevice.getName()+ " - connecting");//è¿™ä¸ªæ˜¯æ˜¾ç¤ºåœ¨textviewä¸­çš„æ–‡å­—
 //                Toast.makeText(getApplicationContext(), mDevice.getName()+ " - connecting", Toast.LENGTH_SHORT).show();
-//                showMessage(mDevice.getName()+ " - connecting");//»òÕßÖ±½ÓÓÃÕâ¸ö·½·¨ÊµÏÖ
+//                showMessage(mDevice.getName()+ " - connecting");//æˆ–è€…ç›´æ¥ç”¨è¿™ä¸ªæ–¹æ³•å®ç°
                 mService.connect(deviceAddress);                           
             }
             break;
@@ -747,10 +747,10 @@ public class BleActivity extends Activity implements RadioGroup.OnCheckedChangeL
     }
     
     
-//		ÕâÀïÓÃÀ´²âÊÔ»Ø´«³¬¹ı20¸ö×Ö½ÚµÄÊ±ºòÓÃµÄ´úÂë
+//		è¿™é‡Œç”¨æ¥æµ‹è¯•å›ä¼ è¶…è¿‡20ä¸ªå­—èŠ‚çš„æ—¶å€™ç”¨çš„ä»£ç 
     public void callback_send_message(byte[] rxValue) {
 
-		Log.i(TAG, "I have received data ×¼±¸»Ø´«Êı¾İ!!!!!!!!!!!!!!!!!!!!!!!");
+		Log.i(TAG, "I have received data å‡†å¤‡å›ä¼ æ•°æ®!!!!!!!!!!!!!!!!!!!!!!!");
 		int length = rxValue.length;
 		byte[] temp1 = new byte[20];
 		byte[] temp2 = new byte[20];
@@ -760,25 +760,25 @@ public class BleActivity extends Activity implements RadioGroup.OnCheckedChangeL
 			for (int i = 0; i < 20; i++) {
 				temp1[i]=rxValue[i];
 			}
-			mService.writeRXCharacteristic(temp1);//µ÷ÓÃmService¶ÔÏóÖĞµÄ·¢ËÍ·½·¨writeRXCharacteristicÀ´·¢ËÍÊı¾İ
+			mService.writeRXCharacteristic(temp1);//è°ƒç”¨mServiceå¯¹è±¡ä¸­çš„å‘é€æ–¹æ³•writeRXCharacteristicæ¥å‘é€æ•°æ®
 			
 			for (int i = 20, j = 0; i < length; i++, j++) {
 				temp2[j]=rxValue[i];
 			}
 			mService.writeRXCharacteristic(temp2);	
 			
-			Log.i(TAG, "I have send send send send send back back back back back !!!!!!!!!!!»Ø´«·¢ËÍ³É¹¦!!!!!!!!!!!!");
-//			Toast.makeText(getApplicationContext(), "»Ø´«·¢ËÍ³É¹¦", 1).show();
+			Log.i(TAG, "I have send send send send send back back back back back !!!!!!!!!!!å›ä¼ å‘é€æˆåŠŸ!!!!!!!!!!!!");
+//			Toast.makeText(getApplicationContext(), "å›ä¼ å‘é€æˆåŠŸ", 1).show();
 		}else {
 			//mService.writeRXCharacteristic(rxValue);
-			//Log.i(TAG, "I have send send send send send back back back back back !!!!!!!!!!!!»Ø´«·¢ËÍ³É¹¦!!!!!!!!!!!");
-//			Toast.makeText(getApplicationContext(), "»Ø´«·¢ËÍ³É¹¦", 1).show();
+			//Log.i(TAG, "I have send send send send send back back back back back !!!!!!!!!!!!å›ä¼ å‘é€æˆåŠŸ!!!!!!!!!!!");
+//			Toast.makeText(getApplicationContext(), "å›ä¼ å‘é€æˆåŠŸ", 1).show();
 		}  
     	
 	}
 
     
-    //ÕâÀï×¢ÊÍÍË³öÌáÊ¾µÄ¹¦ÄÜ
+    //è¿™é‡Œæ³¨é‡Šé€€å‡ºæç¤ºçš„åŠŸèƒ½
 /*    @Override
     public void onBackPressed() {
         if (mState == UART_PROFILE_CONNECTED) {

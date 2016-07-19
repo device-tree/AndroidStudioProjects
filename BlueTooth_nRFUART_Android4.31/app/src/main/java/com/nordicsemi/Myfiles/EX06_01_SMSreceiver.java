@@ -10,68 +10,68 @@ import android.telephony.SmsMessage;
 import android.util.Log;
 import android.widget.Toast;
 
-//Õâ¸öÀàÊµÏÖµÄÊÇ´¦Àí²Ù×÷ÏµÍ³µÄÊÂ¼ş£¬Ëü´¦ÓÚÒ»Ö±¼àÌıµÄ×´Ì¬£¬ÖªµÀ²Ù×÷ÏµÍ³ÓĞÊÂ¼ş·¢ÉúÊ±²Å»áÓĞËùÏìÓ¦  
-/* ×Ô¶¨Òå¼Ì³Ğ×ÔBroadcastReceiverÀà,¼àÌıÏµÍ³·şÎñ¹ã²¥µÄĞÅÏ¢ */  
+/*è¿™ä¸ªç±»å®ç°çš„æ˜¯å¤„ç†æ“ä½œç³»ç»Ÿçš„äº‹ä»¶ï¼Œå®ƒå¤„äºä¸€ç›´ç›‘å¬çš„çŠ¶æ€ï¼ŒçŸ¥é“æ“ä½œç³»ç»Ÿæœ‰äº‹ä»¶å‘ç”Ÿæ—¶æ‰ä¼šæœ‰æ‰€å“åº”*/
+/* è‡ªå®šä¹‰ç»§æ‰¿è‡ªBroadcastReceiverç±»,ç›‘å¬ç³»ç»ŸæœåŠ¡å¹¿æ’­çš„ä¿¡æ¯ */
 public class EX06_01_SMSreceiver extends BroadcastReceiver   
 {   
- /*ÉùÃ÷¾²Ì¬×Ö·û´®,²¢Ê¹ÓÃandroid.provider.Telephony.SMS_RECEIVED×÷ÎªActionÎª¶ÌĞÅµÄÒÀ¾İ*/  
+ /*å£°æ˜é™æ€å­—ç¬¦ä¸²,å¹¶ä½¿ç”¨android.provider.Telephony.SMS_RECEIVEDä½œä¸ºActionä¸ºçŸ­ä¿¡çš„ä¾æ®*/
 private static final String mACTION = "android.provider.Telephony.SMS_RECEIVED";   
-  
-/* 
- * ÊµÏÖ¹ã²¥µÄ¼àÌı·´Ó¦±ØĞëÒªÖØÔØµÄº¯Êı 
- * Õâ¸öº¯ÊıÓĞÒ»¸öÖØÒªµÄ²ÎÊıIntent£¬ËüÊÇÏµÍ³»òÓÃ»§·¢ËÍµÄIntent±äÁ¿ 
- * @see android.content.BroadcastReceiver#onReceive(android.content.Context, android.content.Intent) 
- */  
+
+/*
+ * å®ç°å¹¿æ’­çš„ç›‘å¬ååº”å¿…é¡»è¦é‡è½½çš„å‡½æ•°
+ * è¿™ä¸ªå‡½æ•°æœ‰ä¸€ä¸ªé‡è¦çš„å‚æ•°Intentï¼Œå®ƒæ˜¯ç³»ç»Ÿæˆ–ç”¨æˆ·å‘é€çš„Intentå˜é‡
+ * @see android.content.BroadcastReceiver#onReceive(android.content.Context, android.content.Intent)
+ */
 @Override   
 public void onReceive(Context context, Intent intent)   
 {   
   // TODO Auto-generated method stub   
-  /* ÅĞ¶Ï´«À´IntentÊÇ·ñÎª¶ÌĞÅ 
-   * ĞèÒªÔÚ¹ıÂËÆ÷ÖĞÉèÖÃ 
-   * */  
+  /* åˆ¤æ–­ä¼ æ¥Intentæ˜¯å¦ä¸ºçŸ­ä¿¡
+   * éœ€è¦åœ¨è¿‡æ»¤å™¨ä¸­è®¾ç½®
+   * */
   if (intent.getAction().equals(mACTION))   
   {   
-    /*½¨¹¹Ò»×Ö·û´®¼¯¼¯ºÏ±äÁ¿sb*/  
+    /*å»ºæ„ä¸€å­—ç¬¦ä¸²é›†é›†åˆå˜é‡sb*/  
     StringBuilder sb = new StringBuilder();   
-    /*½ÓÊÕÓÉIntent´«À´µÄÊı¾İ*/  
+    /*æ¥æ”¶ç”±Intentä¼ æ¥çš„æ•°æ®*/  
     Bundle bundle = intent.getExtras();   
-    /*ÅĞ¶ÏIntentÊÇÓĞ×ÊÁÏ*/  
+    /*åˆ¤æ–­Intentæ˜¯æœ‰èµ„æ–™*/  
     if (bundle != null)   
     {  
       Set<String> keysSet=bundle.keySet();  
       for(String keyString:keysSet){  
         Log.d("key", keyString);  
       }  
-      /* pdusÎª androidÄÚ½¨¶ÌĞÅ²ÎÊı identifier 
-       * Í¸¹ıbundle.get("")²¢´«Ò»¸ö°üº¬pdusµÄ¶ÔÏó*/  
+      /* pdusä¸º androidå†…å»ºçŸ­ä¿¡å‚æ•° identifier 
+       * é€è¿‡bundle.get("")å¹¶ä¼ ä¸€ä¸ªåŒ…å«pdusçš„å¯¹è±¡*/  
       Object[] myOBJpdus = (Object[]) bundle.get("pdus");   
-      /*½¨¹¹¶ÌĞÅ¶ÔÏóarray,²¢ÒÀ¾İÊÕµ½µÄ¶ÔÏó³¤¶ÈÀ´½¨Á¢arrayµÄ´óĞ¡*/  
+      /*å»ºæ„çŸ­ä¿¡å¯¹è±¡array,å¹¶ä¾æ®æ”¶åˆ°çš„å¯¹è±¡é•¿åº¦æ¥å»ºç«‹arrayçš„å¤§å°*/  
       SmsMessage[] messages = new SmsMessage[myOBJpdus.length];    
       for (int i = 0; i<myOBJpdus.length; i++)   
       {    
         messages[i] = SmsMessage.createFromPdu ((byte[]) myOBJpdus[i]);    
       }   
           
-      /* ½«ËÍÀ´µÄ¶ÌĞÅºÏ²¢×Ô¶¨ÒåĞÅÏ¢ÓÚStringBuilderµ±ÖĞ */    
+      /* å°†é€æ¥çš„çŸ­ä¿¡åˆå¹¶è‡ªå®šä¹‰ä¿¡æ¯äºStringBuilderå½“ä¸­ */    
       for (SmsMessage currentMessage : messages)   
       {    
-        sb.append("½ÓÊÕµ½À´¸æ:\n");    
-        /* À´Ñ¶ÕßµÄµç»°ºÅÂë */   
+        sb.append("æ¥æ”¶åˆ°æ¥å‘Š:\n");    
+        /* æ¥è®¯è€…çš„ç”µè¯å·ç  */   
         sb.append(currentMessage.getDisplayOriginatingAddress());    
-        sb.append("\n------´«À´µÄ¶ÌĞÅ------\n");    
-        /* È¡µÃ´«À´Ñ¶Ï¢µÄBODY */    
+        sb.append("\n------ä¼ æ¥çš„çŸ­ä¿¡------\n");    
+        /* å–å¾—ä¼ æ¥è®¯æ¯çš„BODY */    
         sb.append(currentMessage.getDisplayMessageBody());    
       }    
     }      
-    /* ±±Notification(Toase)ÏÔÊ¾¶ÌĞÅĞÅÏ¢  */  
+    /* åŒ—Notification(Toase)æ˜¾ç¤ºçŸ­ä¿¡ä¿¡æ¯  */  
     Toast.makeText(context, sb.toString(), Toast.LENGTH_LONG).show();   
        
-    /* ·µ²¢¼ÓActivity */   
+    /* è¿”å¹¶åŠ Activity */   
 //    Intent i = new Intent(context, EX06_01.class);   
 //    Bundle bundle2=new Bundle();  
 //    bundle2.putString("SMS", sb.toString());  
 //    i.putExtra("SMSS", bundle2);  
-//    /*Éè¶¨ÈÃ¼ÓActivityÒÔÒ»¸öĞÂµÄtaskÀ´Ö´ĞĞ*/  
+//    /*è®¾å®šè®©åŠ Activityä»¥ä¸€ä¸ªæ–°çš„taskæ¥æ‰§è¡Œ*/  
 //    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);   
 //    context.startActivity(i);   
   }   
