@@ -29,7 +29,7 @@
     <string name="SoftwareRevision">SoftwareRevision</string>
     <string name="SystemId">SystemId</string>
     <string name="Txpower">    Txpower Level</string>
-    <string name="app_name">智能码表</string>
+    <string name="app_name">蓝牙测亩仪</string>
     <string name="app_version">Update 2015-6-1</string>
     <string name="average_peispeed">平均配速min/KM</string>
     <string name="average_speed">平均速度KMH</string>
@@ -51,9 +51,9 @@
     <string name="high_alert">HIGH Alert triggered!</string>
     <string name="iasWrite">ImmediateAlert</string>
     <string name="llsWrite">LinkLossAlert</string>
-    <string name="login_account">账户：</string>
+    <string name="login_account">手机号</string>
     <string name="login_login">登   录</string>
-    <string name="login_password">密码：</string>
+    <string name="login_password">密   码</string>
     <string name="low_alert">LOW Alert triggered!</string>
     <string name="max_speed">最大速度KMH</string>
     <string name="mileage">里程KM</string>

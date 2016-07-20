@@ -4,21 +4,21 @@
     api-level="22"
     density="xhdpi"
     format="7"
-    timestamp="187419309805521"
+    timestamp="48823988806920"
     token="4893255442489410962" >
 
     <task
         name="javac"
-        duration="68" />
+        duration="121" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="22" />
+        duration="0" />
     <task
         name="verifier"
-        duration="5" />
+        duration="0" />
 
     <artifact
         location="/Users/jialin/AndroidStudioProjects/FragmentsTest/app/build/outputs/apk/app-debug.apk"

@@ -22,42 +22,35 @@ public class LoginActivity extends Activity {
 		// TODO Auto-generated method stub	
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login_activity);
-		
-		TextView secretforget = (TextView) this.findViewById(R.id.forget_secret);
-		secretforget.setOnClickListener(new TextViewClickListener());
-		
-		Button loginButton = (Button) this.findViewById(R.id.btn_login);
-		loginButton.setOnClickListener(new ButtonClickListener());//button茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆�禄茂驴陆茂驴陆茂驴陆茂驴陆ButtonClickListener()茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆btn茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆�陋
-		
 	}
-	//茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆�录茂驴陆
-	private class TextViewClickListener implements View.OnClickListener{
 
-		@Override
-		public void onClick(View v) {
-			// TODO Auto-generated method stub
+	public void onClick_Login(View view){
+		if(view == findViewById(R.id.new_user)){
+			Intent intent = new Intent (LoginActivity.this, MainUserUI.class);
+			startActivity(intent);
+			LoginActivity.this.finish();
 		}
-	}
-	
-	//茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆�掳茂驴陆茂驴陆茂驴陆�录茂驴陆茂驴陆�楼茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆�碌茂驴陆茂驴陆�禄茂驴陆茂驴陆茂驴陆茂驴陆�录茂驴陆茂驴陆茂驴陆�陆茂驴陆茂驴陆茂驴陆忙拢漏
-	//茂驴陆谩鹿漏�禄茂驴陆茂驴陆茂驴陆�虏茂驴陆茂驴陆茂驴陆ButtonClickListener茂驴陆茂驴陆�碌茂驴陆茂驴陆OnClickListener茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆
-	private class ButtonClickListener implements View.OnClickListener{
-//	private final class ButtonClickListener implements View.OnClickListener{//茂驴陆茂驴陆茂驴陆茂驴陆�虏茂驴陆茂驴陆�虏禄茂驴陆茂驴陆�陋茂驴陆�鲁�拢茂驴陆�陋茂驴陆茂驴陆final茂驴陆�录茂驴陆茂驴陆茂驴陆
-		@Override
-		public void onClick(View v) {
-			// TODO Auto-generated method stub
-			//茂驴陆�碌茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆�卤茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆id
+		if(view == findViewById(R.id.forget_password)){
+			setContentView(R.layout.reset_password);
+		}
+		if(view == findViewById(R.id.phone_number)){
+			Intent intent = new Intent (LoginActivity.this, MainUserUI.class);
+			startActivity(intent);
+			LoginActivity.this.finish();
+		}
+		if(view == findViewById(R.id.btn_login)){
+			//得到两个文本输入框的id
 			EditText accountEditText = (EditText) findViewById(R.id.account_editext);
-			EditText passwdeEditText = (EditText) findViewById(R.id.passwd_edit);
-			//茂驴陆�碌茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆�卤茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆
+			EditText passwdeEditText = (EditText) findViewById(R.id.password_edit);
+			//得到两个文本输入框的内容
 			String accountString = accountEditText.getText().toString();
 			String passwdString = passwdeEditText.getText().toString();
-			
+
 			FileService service = new FileService(getApplicationContext());
-			//茂驴陆茂驴陆茂驴陆�鲁茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆�碌茂驴陆�拢茂驴陆try{}catch茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆茂驴陆矛鲁拢茂驴陆茂驴陆
+			//被抛出的例外在这里实现（try{}catch捕获例外异常）
 			try {
 				service.save(accountString, passwdString);
-				Toast.makeText(getApplicationContext(), "saved succeed!!!!", 1).show();
+				Toast.makeText(getApplicationContext(), "登录成功", 1).show();
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				Toast.makeText(getApplicationContext(), "saved faile!!!!", 1).show();
@@ -65,10 +58,4 @@ public class LoginActivity extends Activity {
 			}
 		}
 	}
-	
-	
-	
-	
-	
-
 }

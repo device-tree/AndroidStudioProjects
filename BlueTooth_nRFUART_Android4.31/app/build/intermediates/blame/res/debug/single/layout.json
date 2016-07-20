@@ -4,16 +4,16 @@
         "source": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/src/main/res/layout/main_weixin.xml"
     },
     {
-        "merged": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/res/merged/debug/layout/login_activity.xml",
-        "source": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/src/main/res/layout/login_activity.xml"
-    },
-    {
         "merged": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/res/merged/debug/layout/whats1.xml",
         "source": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/src/main/res/layout/whats1.xml"
     },
     {
         "merged": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/res/merged/debug/layout/whats4.xml",
         "source": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/src/main/res/layout/whats4.xml"
+    },
+    {
+        "merged": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/res/merged/debug/layout/login_activity.xml",
+        "source": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/src/main/res/layout/login_activity.xml"
     },
     {
         "merged": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/res/merged/debug/layout/main_tab_friends.xml",
@@ -62,6 +62,10 @@
     {
         "merged": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/res/merged/debug/layout/what_your_birthday.xml",
         "source": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/src/main/res/layout/what_your_birthday.xml"
+    },
+    {
+        "merged": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/res/merged/debug/layout/reset_password.xml",
+        "source": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/src/main/res/layout/reset_password.xml"
     },
     {
         "merged": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/res/merged/debug/layout/how_high_activity.xml",
@@ -120,11 +124,11 @@
         "source": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/src/main/res/layout/whats2.xml"
     },
     {
-        "merged": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/res/merged/debug/layout/whats5.xml",
-        "source": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/src/main/res/layout/whats5.xml"
-    },
-    {
         "merged": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/res/merged/debug/layout/exit_dialog.xml",
         "source": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/src/main/res/layout/exit_dialog.xml"
+    },
+    {
+        "merged": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/res/merged/debug/layout/whats5.xml",
+        "source": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/src/main/res/layout/whats5.xml"
     }
 ]

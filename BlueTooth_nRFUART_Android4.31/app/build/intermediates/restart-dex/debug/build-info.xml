@@ -4,35 +4,47 @@
     api-level="22"
     density="xhdpi"
     format="7"
-    timestamp="24524674802535"
+    timestamp="71868536554987"
     token="6731484599230461876" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="353" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="62" />
     <task
         name="verifier"
-        duration="0" />
+        duration="9" />
 
     <artifact
         location="/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/res/resources-debug.ap_"
         type="RESOURCES" />
+    <artifact
+        location="/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
+        type="DEX" />
+    <artifact
+        location="/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex"
+        type="DEX" />
 
-    <build timestamp="22094700000555" >
+    <build timestamp="70223412050810" >
         <artifact
             location="/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
-    <build timestamp="24524674802535" >
+    <build timestamp="71868536554987" >
         <artifact
             location="/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/res/resources-debug.ap_"
             type="RESOURCES" />
+        <artifact
+            location="/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
+            type="DEX" />
+        <artifact
+            location="/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex"
+            type="DEX" />
     </build>
 
 </instant-run>

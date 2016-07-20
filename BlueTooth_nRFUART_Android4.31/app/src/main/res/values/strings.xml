@@ -16,7 +16,7 @@
 -->
 <resources>
 
-    <string name="app_name">智能码表</string>
+    <string name="app_name">蓝牙测亩仪</string>
     <string name="device">Device:</string>
     <string name="no_device">&lt;Select a device&gt;</string>
     <string name="select_device">Select a device</string>
@@ -66,8 +66,8 @@
     
     <!-- ====================================== -->
     <string name="app_version">Update 2015-6-1</string>
-    <string name="login_account">账户：</string>
-    <string name="login_password">密码：</string>
+    <string name="login_account">手机号</string>
+    <string name="login_password">密   码</string>
     <string name="login_login">登   录</string>
     
     <!-- =================码表界面===================== -->
