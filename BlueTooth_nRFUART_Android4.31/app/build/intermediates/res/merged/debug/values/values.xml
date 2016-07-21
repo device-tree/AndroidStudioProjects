@@ -11,6 +11,8 @@
     <color name="tomato">#FF6347</color>
     <color name="white">#FFFFFF</color>
     <color name="whitegrey">#FFF2F2F2</color>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
     <string name="BatteryLevel">    Battery Level</string>
     <string name="FirmwareRevision">FirmwareRevision</string>
     <string name="HardwareRevision">HardwareRevision</string>

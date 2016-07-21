@@ -64,7 +64,7 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:text="记住密码"
-		android:textSize="16dp"
+		android:textSize="20dp"
 		android:textColor="@color/black"
 		android:layout_marginTop="300dp"
 		android:layout_alignRight="@+id/btn_login"
@@ -82,39 +82,41 @@
 		android:layout_gravity="center"
 		android:onClick="onClick_Login"
 		/>
-	<TextView
+	<Button
 		android:id="@+id/new_user"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:text="新用户"
-		android:textSize="16dp"
+		android:textSize="20dp"
 		android:layout_alignParentBottom="true"
 		android:layout_alignParentEnd="true"
 		android:onClick="onClick_Login"
 		android:textColor="@color/black"
+		android:background="@color/white"
 		/>
-	<TextView
+	<Button
 		android:id="@+id/phone_number"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:text="客服电话"
-		android:textSize="16dp"
+		android:textSize="20dp"
 		android:layout_alignParentBottom="true"
 		android:layout_centerHorizontal="true"
 		android:onClick="onClick_Login"
 		android:textColor="@color/black"
+		android:background="@color/white"
 		/>
-	<TextView
+	<Button
 		android:id="@+id/forget_password"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="忘记密码？"
-		android:textSize="16dp"
+		android:text="忘记密码"
+		android:textSize="20dp"
 		android:layout_alignParentBottom="true"
-
 		android:layout_marginTop="20dp"
 		android:onClick="onClick_Login"
 		android:textColor="@color/black"
+		android:background="@color/white"
 		/>
 
 </RelativeLayout>

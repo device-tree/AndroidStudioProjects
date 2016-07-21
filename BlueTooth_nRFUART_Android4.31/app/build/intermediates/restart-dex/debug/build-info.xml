@@ -4,47 +4,30 @@
     api-level="22"
     density="xhdpi"
     format="7"
-    timestamp="71868536554987"
+    timestamp="23789501881285"
     token="6731484599230461876" >
 
     <task
         name="javac"
-        duration="353" />
+        duration="245" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="62" />
+        duration="157" />
     <task
         name="verifier"
-        duration="9" />
+        duration="22" />
 
     <artifact
-        location="/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/res/resources-debug.ap_"
-        type="RESOURCES" />
-    <artifact
-        location="/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
-        type="DEX" />
-    <artifact
-        location="/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex"
-        type="DEX" />
+        location="/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/outputs/apk/app-debug.apk"
+        type="MAIN" />
 
-    <build timestamp="70223412050810" >
+    <build timestamp="23789501881285" >
         <artifact
             location="/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
-    </build>
-    <build timestamp="71868536554987" >
-        <artifact
-            location="/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/res/resources-debug.ap_"
-            type="RESOURCES" />
-        <artifact
-            location="/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
-            type="DEX" />
-        <artifact
-            location="/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex"
-            type="DEX" />
     </build>
 
 </instant-run>

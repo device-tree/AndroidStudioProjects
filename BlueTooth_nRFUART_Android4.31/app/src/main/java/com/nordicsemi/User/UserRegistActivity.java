@@ -12,42 +12,19 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class UserRegistActivity extends Activity implements OnClickListener{
-	
-	private  ImageView getbackregist;
-	private Button finishbtn;
-	
+public class UserRegistActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.user_registing);
-		
-		getbackregist = (ImageView) findViewById(R.id.get_back_regist);
-		finishbtn = (Button) findViewById(R.id.finish_btn);
-		getbackregist.setOnClickListener(this);
-		finishbtn.setOnClickListener(this);
-	
 	}
-	
-	@Override
-	public void onClick(View v) {
-		// TODO Auto-generated method stub
-	
-		switch (v.getId()) {
-		case R.id.get_back_regist:
-			this.finish();
-			break;
-		case R.id.finish_btn:
-			startActivity(new Intent(this, MainUserUI.class));
-			Toast toast = Toast.makeText(this, "登录成功", Toast.LENGTH_LONG);
-			toast.show();
-			break;
-		default:
-			break;
-		}
-		
-	}  
-	
 
+	public void register_onClick(View view) {
+		if (view == findViewById(R.id.btn_return_left)) {
+			Intent intent = new Intent(UserRegistActivity.this, LoginActivity.class);
+			startActivity(intent);
+			UserRegistActivity.this.finish();
+		}
+	}
 }

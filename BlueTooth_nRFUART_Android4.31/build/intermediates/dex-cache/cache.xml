@@ -1,2 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.0"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.0.0_13600f66cca2dff3339426bda914e23ca077838c/classes.dex" />
+    </item>
+    <item
+        jar="/Users/jialin/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/24.0.0/2943c74db6d4346ab8c6531adac91fa05c137c40/support-annotations-24.0.0.jar"
+        jumboMode="true"
+        revision="24.0.0"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.0.0_85e37e03922b77d62f234feede6d5952b369db33/classes.dex" />
+    </item>
+    <item
+        jar="/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/libs/internal_impl-24.0.0.jar"
+        jumboMode="true"
+        revision="24.0.0"
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.0.0_5bb187c21a169157ea5e5d99e73c99b18581b469/classes.dex" />
+    </item>
+    <item
+        jar="/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="24.0.0"
+        sha1="5a22e58bacb25bf8d3131736851c20c6fc6983f2">
+        <dex dex="/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_fc05720e0282269eedd70586169c0f207d7ff28a/classes.dex" />
+    </item>
+    <item
+        jar="/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="24.0.0"
+        sha1="88d9bb74031614c08d4fb13218c4a3484c326b71">
+        <dex dex="/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_6dea573edd377d5034b0b7e551ca61421ebb6bb1/classes.dex" />
+    </item>
+
+</items>

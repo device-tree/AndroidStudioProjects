@@ -26,15 +26,12 @@ public class LoginActivity extends Activity {
 
 	public void onClick_Login(View view){
 		if(view == findViewById(R.id.new_user)){
-			Intent intent = new Intent (LoginActivity.this, MainUserUI.class);
+			Intent intent = new Intent (LoginActivity.this, UserRegistActivity.class);
 			startActivity(intent);
 			LoginActivity.this.finish();
 		}
 		if(view == findViewById(R.id.forget_password)){
-			setContentView(R.layout.reset_password);
-		}
-		if(view == findViewById(R.id.phone_number)){
-			Intent intent = new Intent (LoginActivity.this, MainUserUI.class);
+			Intent intent = new Intent (LoginActivity.this, ResetPassword.class);
 			startActivity(intent);
 			LoginActivity.this.finish();
 		}
@@ -56,6 +53,11 @@ public class LoginActivity extends Activity {
 				Toast.makeText(getApplicationContext(), "saved faile!!!!", 1).show();
 				e.printStackTrace();
 			}
+  
+			Intent intent = new Intent (LoginActivity.this, MainUserUI.class);
+			startActivity(intent);
+			LoginActivity.this.finish();
+
 		}
 	}
 }

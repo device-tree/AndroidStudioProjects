@@ -80,6 +80,10 @@
         "source": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/src/main/res/drawable-hdpi/girl_logo.png"
     },
     {
+        "merged": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/return_left.png",
+        "source": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/src/main/res/drawable-hdpi/return_left.png"
+    },
+    {
         "merged": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/boy_logo_black.png",
         "source": "/Users/jialin/AndroidStudioProjects/BlueTooth_nRFUART_Android4.31/app/src/main/res/drawable-hdpi/boy_logo_black.png"
     },

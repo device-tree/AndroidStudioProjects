@@ -33,6 +33,9 @@
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.SEND_SMS" />
 
+    <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:name="com.android.tools.fd.runtime.BootstrapApplication"
         android:icon="@drawable/head_logo"
@@ -67,7 +70,6 @@
         <activity android:name="com.nordicsemi.User.WhatYourWeight" />
         <activity android:name="com.nordicsemi.User.LoginActivity" />
         <activity android:name="com.nordicsemi.User.WhatYourBirthday" />
-        <activity android:name="com.nordicsemi.User.Whatsnew" />
         <activity android:name="com.nordicsemi.User.UserRegistActivity" />
         <activity android:name="com.nordicsemi.User.MainUserUI" />
         <activity android:name="com.nordicsemi.User.MainTopRightDialog" />
@@ -93,6 +95,8 @@
         <service
             android:name="com.nordicsemi.nrfUARTv2.UartService"
             android:enabled="true" />
+
+        <activity android:name="com.nordicsemi.User.ResetPassword" />
     </application>
 
 </manifest>
